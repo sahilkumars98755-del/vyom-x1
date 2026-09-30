@@ -21,7 +21,10 @@ document.querySelectorAll('.swatch').forEach(btn => {
 
   /* --- theme toggle (outdoor visibility) --- */
   var tBtn = document.getElementById('themeBtn');
-  if (Math.random() < 0.3) root.setAttribute('data-theme', 'light');
+  var savedTheme = null; try { savedTheme = localStorage.getItem('vyom-theme'); } catch (e) {}
+  var wantsLight = savedTheme ? savedTheme === 'light'
+    : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches);
+  root.setAttribute('data-theme', wantsLight ? 'light' : 'dark');
   if (tBtn) tBtn.addEventListener('click', function () {
     root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
   });
@@ -89,7 +92,7 @@ document.querySelectorAll('.swatch').forEach(btn => {
   recalc();
 
   /* --- drag to rotate (design render) --- */
-  var bp = document.getElementById('backPhone');
+  var bp = document.getElementById('heroShot');
   if (bp) {
     var drag = null;
     bp.addEventListener('pointerdown', function (e) {
