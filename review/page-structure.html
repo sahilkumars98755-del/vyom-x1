@@ -1,0 +1,1182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#07080c">
+<title>Vyom X1 — Sky is the spec sheet. | VYOM</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VYOM X1 — product site concept
+   Dark-first premium aesthetic · deep navy-black + copper gold
+   ============================================================ */
+:root {
+  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'Fragment Mono', 'SF Mono', Consolas, monospace;
+
+  --bg: #07080c;
+  --bg-2: #0b0d13;
+  --surface: rgba(255,255,255,0.04);
+  --surface-2: rgba(255,255,255,0.07);
+  --border: rgba(255,255,255,0.09);
+  --border-2: rgba(255,255,255,0.16);
+
+  --text: #f2f5fa;
+  --text-dim: #9aa3b2;
+
+  --gold: #d4a73a;
+  --gold-hi: #f0cd6e;
+  --gold-dim: rgba(212,167,58,0.12);
+  --blue: #4a90d9;
+  --blue-dim: rgba(74,144,217,0.14);
+  --green: #46c99a;
+  --green-dim: rgba(70,201,154,0.12);
+  --red: #e0654f;
+
+  --radius: 22px;
+  --nav-h: 60px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.65;
+  overflow-x: hidden;
+  overflow-wrap: break-word;
+}
+img, svg { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+.grid > *, .flex > * { min-width: 0; }
+
+@keyframes fadeUp { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeScale { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+@keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+.wrap { max-width: 1120px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 32px); }
+
+/* ---------------- NAV ---------------- */
+.nav {
+  position: sticky; top: 0; z-index: 100; height: var(--nav-h);
+  background: rgba(7,8,12,0.72);
+  backdrop-filter: saturate(160%) blur(18px);
+  -webkit-backdrop-filter: saturate(160%) blur(18px);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner { max-width: 1120px; margin: 0 auto; padding: 0 clamp(18px, 4vw, 32px); height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.brandmark { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 4px; font-size: 15px; }
+.brandmark__dot { width: 22px; height: 22px; border-radius: 7px; background: conic-gradient(from 220deg, #f0cd6e, #d4a73a 30%, #1c2130 70%, #f0cd6e); box-shadow: inset 0 0 0 1px rgba(255,255,255,0.25); }
+.nav__links { display: flex; gap: clamp(14px, 2.4vw, 30px); font-size: 13.5px; color: var(--text-dim); }
+.nav__links a { transition: color 0.15s ease; white-space: nowrap; }
+.nav__links a:hover { color: var(--text); }
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font-family: var(--font-body); font-weight: 700; font-size: 14px;
+  padding: 11px 22px; border-radius: 100px; cursor: pointer; border: none;
+  transition: transform 0.15s ease, background 0.15s ease, color 0.15s ease;
+}
+.btn:active { transform: scale(0.97); }
+.btn--gold { background: linear-gradient(180deg, var(--gold-hi), var(--gold)); color: #171400; }
+.btn--gold:hover { filter: brightness(1.06); }
+.btn--ghost { background: transparent; color: var(--text); border: 1px solid var(--border-2); }
+.btn--ghost:hover { background: var(--surface); }
+.nav .btn { padding: 8px 18px; font-size: 13px; }
+
+/* mobile chip nav */
+.chipnav { display: none; background: rgba(7,8,12,0.85); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); position: sticky; top: var(--nav-h); z-index: 99; }
+.chipnav__row { display: flex; gap: 8px; overflow-x: auto; padding: 10px 18px; scrollbar-width: none; }
+.chipnav__row::-webkit-scrollbar { display: none; }
+.chipnav a { flex-shrink: 0; font-size: 12.5px; font-weight: 600; color: var(--text-dim); border: 1px solid var(--border); border-radius: 100px; padding: 7px 14px; }
+
+/* ---------------- shared type ---------------- */
+.kicker { font-family: var(--font-mono); font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 12px; }
+.h-xl { font-size: clamp(30px, 5.4vw, 54px); font-weight: 800; letter-spacing: -1.6px; line-height: 1.04; }
+.h-lg { font-size: clamp(26px, 4.2vw, 42px); font-weight: 800; letter-spacing: -1.2px; line-height: 1.08; }
+.lead { font-size: clamp(15.5px, 1.8vw, 18px); color: var(--text-dim); max-width: 560px; }
+.lead b, .lead strong { color: var(--text); }
+.gold { color: var(--gold-hi); }
+
+/* ================= HERO ================= */
+.hero { position: relative; padding: clamp(48px, 8vh, 96px) 0 0; text-align: center; overflow: hidden; }
+.hero::before {
+  content: ''; position: absolute; inset: -40% -20% auto; height: 120%;
+  background: radial-gradient(ellipse 50% 45% at 50% 12%, rgba(74,144,217,0.16) 0%, transparent 65%);
+  pointer-events: none;
+}
+.hero__badge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; color: var(--gold-hi); border: 1px solid rgba(212,167,58,0.35); background: var(--gold-dim); border-radius: 100px; padding: 7px 16px; margin-bottom: 22px; animation: fadeScale 0.5s ease-out both; }
+.hero h1 { font-size: clamp(52px, 11vw, 118px); font-weight: 800; letter-spacing: -3.5px; line-height: 0.94; animation: fadeUp 0.6s ease-out both; }
+.hero h1 em { font-style: italic; font-weight: 400; color: var(--text-dim); }
+.hero__tag { margin: 20px auto 26px; max-width: 620px; font-size: clamp(16px, 2.4vw, 21px); color: var(--text-dim); animation: fadeUp 0.6s 0.08s ease-out both; }
+.hero__tag b { color: var(--text); }
+.hero__cta { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; animation: fadeUp 0.6s 0.14s ease-out both; }
+.hero__price { margin-top: 18px; font-size: 14px; color: var(--text-dim); animation: fadeUp 0.6s 0.2s ease-out both; }
+.hero__price b { color: var(--text); font-size: 17px; }
+
+/* ---- 3D phone render (front) ---- */
+.stage { position: relative; margin: clamp(36px, 6vh, 64px) auto 0; max-width: 560px; padding-bottom: clamp(40px, 8vh, 80px); }
+.stage::before { /* floor glow */
+  content: ''; position: absolute; left: 50%; bottom: 8px; transform: translateX(-50%);
+  width: 78%; height: 46px; border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(74,144,217,0.22) 0%, rgba(212,167,58,0.08) 45%, transparent 72%);
+  filter: blur(6px);
+}
+.phone3d {
+  position: relative; z-index: 2; width: min(262px, 62vw); aspect-ratio: 9/19.2;
+  margin: 0 auto; border-radius: 17% / 8.6%;
+  background: linear-gradient(150deg, #6a7482 0%, #23272f 22%, #454d5c 52%, #1b1f27 78%, #3d4450 100%); /* titanium frame */
+  padding: clamp(4px, 0.9vw, 6px);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.62), 0 8px 28px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(255,255,255,0.06);
+  animation: floaty 7s ease-in-out infinite;
+}
+.phone3d__screen {
+  position: relative; width: 100%; height: 100%; border-radius: 15.4% / 7.8%; overflow: hidden;
+  background:
+    radial-gradient(ellipse 90% 60% at 28% 18%, rgba(74,144,217,0.75) 0%, transparent 55%),
+    radial-gradient(ellipse 70% 50% at 78% 78%, rgba(212,167,58,0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 50% 40% at 60% 40%, rgba(120,70,180,0.30) 0%, transparent 60%),
+    linear-gradient(165deg, #101b30 0%, #05070d 58%, #0b1220 100%);
+}
+.phone3d__screen::before { /* curved-glass glare */
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(115deg, transparent 32%, rgba(255,255,255,0.10) 40%, rgba(255,255,255,0.02) 46%, transparent 54%);
+}
+.phone3d__punch { position: absolute; top: 2.6%; left: 50%; transform: translateX(-50%); width: 3.6%; aspect-ratio: 1; border-radius: 50%; background: #000; box-shadow: 0 0 0 1.5px #151a24, inset 0 0 2px rgba(80,120,200,0.6); }
+.phone3d__statusbar { position: absolute; top: 2.8%; left: 8%; right: 8%; display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: clamp(7px, 1.5vw, 9px); color: rgba(255,255,255,0.75); }
+.phone3d__lock { position: absolute; bottom: 9%; left: 0; right: 0; text-align: center; }
+.phone3d__lock .t1 { font-size: clamp(17px, 4.4vw, 24px); font-weight: 800; letter-spacing: -0.5px; }
+.phone3d__lock .t2 { font-family: var(--font-mono); font-size: clamp(6.5px, 1.4vw, 9px); letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-hi); margin-top: 4px; }
+.phone3d__home { position: absolute; bottom: 2.4%; left: 50%; transform: translateX(-50%); width: 26%; height: 1.1%; border-radius: 100px; background: rgba(255,255,255,0.85); }
+.p3d-btn { position: absolute; width: 0.9%; border-radius: 3px; background: linear-gradient(180deg, #4c5565, #262b35); }
+.p3d-btn--power { right: -1.2%; top: 21.5%; height: 7.5%; }
+.p3d-btn--vol { left: -1.2%; top: 18%; height: 11%; }
+
+/* ---- colorway switcher ---- */
+.swatches { display: flex; gap: 12px; justify-content: center; align-items: center; margin-top: 6px; flex-wrap: wrap; }
+.swatch { width: 44px; height: 44px; border-radius: 50%; border: 2px solid transparent; cursor: pointer; padding: 0; position: relative; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18), 0 2px 8px rgba(0,0,0,0.4); transition: transform 0.15s ease; }
+.swatch:active { transform: scale(0.94); }
+.swatch[aria-pressed="true"] { border-color: var(--gold-hi); }
+/* colorways via data-attr on .phoneback */
+.swatches__label { font-family: var(--font-mono); font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); }
+
+/* ---------------- stat strip ---------------- */
+.stats { border-block: 1px solid var(--border); background: var(--bg-2); }
+.stats__row { display: grid; grid-template-columns: repeat(5, 1fr); }
+.stat { padding: 26px 18px; text-align: center; border-left: 1px solid var(--border); }
+.stat:first-child { border-left: none; }
+.stat__v { font-size: clamp(19px, 2.6vw, 27px); font-weight: 800; letter-spacing: -0.8px; color: var(--gold-hi); }
+.stat__l { font-family: var(--font-mono); font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--text-dim); margin-top: 4px; }
+
+/* ---------------- story sections ---------------- */
+.sec { padding: clamp(64px, 10vh, 120px) 0; }
+.sec--alt { background: linear-gradient(180deg, var(--bg) 0%, #0a0f1a 50%, var(--bg) 100%); border-block: 1px solid var(--border); }
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(28px, 5vw, 64px); align-items: center; }
+.duo--flip .duo__media { order: 2; }
+.duo__copy .kicker { margin-bottom: 14px; }
+.duo__copy p { margin-top: 16px; }
+.duo__copy ul { margin-top: 18px; list-style: none; }
+.duo__copy li { position: relative; padding-left: 20px; font-size: 14.5px; color: var(--text-dim); margin-top: 9px; }
+.duo__copy li::before { content: ''; position: absolute; left: 0; top: 9px; width: 9px; height: 9px; border-radius: 3px; background: var(--gold); }
+.duo__copy li b { color: var(--text); }
+
+/* back-of-phone 3D render */
+.phoneback {
+  position: relative; width: min(238px, 58vw); aspect-ratio: 9/19.2; margin: 0 auto;
+  border-radius: 17% / 8.6%; padding: clamp(4px, 0.9vw, 6px);
+  background: linear-gradient(150deg, #6a7482, #23272f 30%, #454d5c 60%, #1b1f27);
+  box-shadow: 0 40px 80px rgba(0,0,0,0.6), 0 8px 28px rgba(0,0,0,0.45);
+  transition: background 0.4s ease;
+}
+.phoneback__panel { position: relative; width: 100%; height: 100%; border-radius: 15.4% / 7.8%; overflow: hidden; transition: background 0.4s ease; }
+.phoneback__panel::after { content: ''; position: absolute; inset: 0; background: linear-gradient(70deg, transparent 38%, rgba(255,255,255,0.07) 44%, transparent 52%); }
+/* colorways via data-attr on .phoneback */
+.phoneback[data-c="ocean"] .phoneback__panel { background: radial-gradient(ellipse 120% 90% at 25% 12%, #2c4d7e 0%, #14213a 48%, #0c1526 100%); }
+.phoneback[data-c="copper"] .phoneback__panel { background: radial-gradient(ellipse 120% 90% at 25% 12%, #8a5a2e 0%, #4a2f1a 50%, #241609 100%); }
+.phoneback[data-c="silver"] .phoneback__panel { background: radial-gradient(ellipse 130% 95% at 28% 10%, #d7dde6 0%, #9aa5b4 45%, #5c6572 100%); }
+.phoneback__cam {
+  position: absolute; top: 7.5%; left: 9%; width: 47%; aspect-ratio: 1.02; border-radius: 24%;
+  background: linear-gradient(150deg, #2b3444, #101623 55%, #223046);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), inset 0 -2px 6px rgba(0,0,0,0.5), 0 4px 14px rgba(0,0,0,0.4);
+  display: grid; grid-template-columns: 1fr 1fr; place-items: center; padding: 9%; gap: 2%;
+}
+.lens { width: 42%; aspect-ratio: 1; border-radius: 50%; position: relative; display: grid; place-items: center;
+  background: conic-gradient(from 210deg, #77839a, #131720 25%, #626e85 50%, #0a0d13 75%, #77839a);
+  box-shadow: 0 0 0 2px rgba(255,255,255,0.06), 0 2px 6px rgba(0,0,0,0.6);
+}
+.lens::before { content: ''; width: 68%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 36% 30%, #3f6ea8 0%, #0a0f18 58%); box-shadow: inset 0 0 4px rgba(0,0,0,0.9); }
+.lens::after { content: ''; position: absolute; top: 22%; left: 26%; width: 16%; height: 12%; border-radius: 50%; background: rgba(255,255,255,0.55); filter: blur(1px); }
+.phoneback__logo { position: absolute; bottom: 5.5%; left: 0; right: 0; text-align: center; font-family: var(--font-mono); font-size: clamp(8px, 1.6vw, 11px); letter-spacing: 5px; color: rgba(255,255,255,0.4); }
+.phoneback .p3d-btn--power { right: -1.2%; top: 21.5%; height: 7.5%; width: 1%; border-radius: 3px; position: absolute; background: linear-gradient(180deg,#4c5565,#262b35); }
+
+/* camera macro render */
+.cam-macro { position: relative; width: min(340px, 78vw); aspect-ratio: 1.05; margin: 0 auto; border-radius: 28px;
+  background: linear-gradient(150deg, #2b3444, #101623 55%, #223046);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), inset 0 -3px 10px rgba(0,0,0,0.55), 0 30px 70px rgba(0,0,0,0.55);
+  padding: 7%; display: grid; grid-template-columns: 1fr 1fr; gap: 5%; place-items: center; }
+.cam-macro .lens { width: 46%; }
+.cam-macro__flash { width: 20%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 40% 35%, #fff7dd, #b39b4e 70%); box-shadow: inset 0 0 4px rgba(120,90,20,0.6); }
+.cam-macro__tag { position: absolute; bottom: 5%; left: 0; right: 0; text-align: center; font-family: var(--font-mono); font-size: 10px; letter-spacing: 2px; color: var(--text-dim); text-transform: uppercase; }
+
+/* chip render */
+.chip3d { position: relative; width: min(300px, 70vw); aspect-ratio: 1; margin: 0 auto; border-radius: 26px; padding: 5%;
+  background: linear-gradient(160deg, #1a2030, #0b0e16 60%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.12), 0 26px 60px rgba(0,0,0,0.5); }
+.chip3d__die {
+  width: 100%; aspect-ratio: 1; border-radius: 14px; position: relative;
+  background:
+    repeating-linear-gradient(0deg, transparent 0 14px, rgba(74,144,217,0.12) 14px 15px),
+    repeating-linear-gradient(90deg, transparent 0 14px, rgba(74,144,217,0.12) 14px 15px),
+    linear-gradient(150deg, #101828, #070b12);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+  display: grid; place-items: center;
+}
+.chip3d__die span { font-family: var(--font-mono); font-size: clamp(13px, 2.6vw, 17px); letter-spacing: 2px; color: var(--gold-hi); text-align: center; line-height: 1.7; }
+.chip3d__die span small { display: block; font-size: 0.62em; color: var(--text-dim); letter-spacing: 3px; }
+
+/* battery chart */
+.batt-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: clamp(20px, 4vw, 34px); }
+.batt-chart { margin-top: 18px; }
+.batt-chart svg { width: 100%; height: auto; }
+.batt-legend { display: flex; gap: 18px; flex-wrap: wrap; margin-top: 12px; font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); }
+.batt-legend i { display: inline-block; width: 16px; height: 3px; border-radius: 2px; margin-right: 6px; vertical-align: middle; }
+
+/* ---------------- family / ecosystem ---------------- */
+.family { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.fam-card {
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden;
+  display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease;
+  animation: fadeUp 0.5s ease-out both; animation-delay: calc(var(--i) * 0.06s);
+}
+.fam-card:hover { transform: translateY(-4px); border-color: var(--border-2); }
+.fam-card--hero { background: linear-gradient(180deg, rgba(212,167,58,0.10), rgba(255,255,255,0.03)); border-color: rgba(212,167,58,0.4); }
+.fam-card__vis { aspect-ratio: 1.25; display: grid; place-items: center; background: radial-gradient(ellipse at 50% 100%, rgba(255,255,255,0.05), transparent 70%); border-bottom: 1px solid var(--border); }
+.fam-card__body { padding: 18px 20px 20px; }
+.fam-card__tag { font-family: var(--font-mono); font-size: 9.5px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.fam-card h4 { font-size: 17px; font-weight: 800; letter-spacing: -0.3px; }
+.fam-card p { font-size: 12.5px; color: var(--text-dim); margin-top: 6px; }
+.fam-card__price { margin-top: 10px; font-weight: 800; font-size: 15px; }
+.fam-card__price small { color: var(--text-dim); font-weight: 400; }
+
+/* mini renders for cards */
+.mini-phone { width: 84px; aspect-ratio: 9/19.2; border-radius: 15% / 7.8%; padding: 3px;
+  background: linear-gradient(150deg, #6a7482, #23272f 30%, #454d5c 60%, #1b1f27); box-shadow: 0 14px 30px rgba(0,0,0,0.5); }
+.mini-phone__scr { width: 100%; height: 100%; border-radius: 13% / 6.8%; background:
+  radial-gradient(ellipse 90% 60% at 30% 20%, rgba(74,144,217,0.7) 0%, transparent 55%),
+  radial-gradient(ellipse 70% 50% at 75% 75%, rgba(212,167,58,0.5) 0%, transparent 55%),
+  linear-gradient(165deg, #101b30, #05070d); position: relative; }
+.mini-phone__scr::before { content: ''; position: absolute; top: 5%; left: 50%; transform: translateX(-50%); width: 4px; height: 4px; border-radius: 50%; background: #000; }
+
+.mini-buds { position: relative; width: 108px; height: 92px; }
+.mini-buds__case { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 96px; height: 62px; border-radius: 26px 26px 20px 20px;
+  background: linear-gradient(165deg, #f2f5fa, #b9c2cf 60%, #8d97a6); box-shadow: 0 14px 28px rgba(0,0,0,0.5), inset 0 -3px 6px rgba(0,0,0,0.18); }
+.mini-buds__case::before { content: ''; position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 26px; height: 4px; border-radius: 4px; background: rgba(0,0,0,0.18); }
+.mini-buds__bud { position: absolute; top: 0; width: 30px; height: 38px; }
+.mini-buds__bud--l { left: 16px; transform: rotate(-14deg); }
+.mini-buds__bud--r { right: 16px; transform: rotate(14deg); }
+.mini-buds__head { width: 22px; height: 22px; border-radius: 50%; background: radial-gradient(circle at 35% 30%, #fbfcfe, #c4ccd8 70%); box-shadow: 0 3px 6px rgba(0,0,0,0.35); }
+.mini-buds__stem { width: 8px; height: 22px; border-radius: 6px; background: linear-gradient(180deg, #e8ecf2, #aab3c0); margin: -4px auto 0; }
+
+.mini-band { width: 74px; height: 130px; position: relative; display: grid; place-items: center; }
+.mini-band__strap { position: absolute; inset: 0; border-radius: 40px; background: linear-gradient(180deg, #20242e, #12151c); }
+.mini-band__strap::before, .mini-band__strap::after { content: ''; position: absolute; left: 50%; transform: translateX(-50%); width: 14px; border-radius: 8px; background: linear-gradient(180deg, #1a1e27, #0d1015); }
+.mini-band__strap::before { top: -2px; height: 26px; }
+.mini-band__strap::after { bottom: -2px; height: 26px; }
+.mini-band__face { width: 58px; height: 78px; border-radius: 18px; background: linear-gradient(165deg, #101b30, #05070d); border: 2px solid #2a3446; box-shadow: 0 10px 22px rgba(0,0,0,0.5), inset 0 0 0 1px rgba(74,144,217,0.25); display: grid; place-items: center; }
+.mini-band__face span { font-family: var(--font-mono); font-size: 13px; color: var(--gold-hi); letter-spacing: 1px; }
+.mini-band__face small { display: block; font-size: 8px; color: var(--text-dim); letter-spacing: 1px; }
+
+.mini-charger { width: 92px; height: 84px; position: relative; }
+.mini-charger__body { position: absolute; inset: 0; border-radius: 22px; background: linear-gradient(160deg, #f2f5fa, #c2cad6 55%, #97a1b0); box-shadow: 0 14px 30px rgba(0,0,0,0.45), inset 0 -3px 6px rgba(0,0,0,0.15); }
+.mini-charger__pin { position: absolute; top: 30%; left: 26%; width: 10px; height: 34px; border-radius: 4px; background: linear-gradient(180deg, #d9dee6, #8d97a6); transform: rotate(-24deg); box-shadow: 2px 2px 5px rgba(0,0,0,0.3); }
+.mini-charger__pin--2 { left: auto; right: 26%; transform: rotate(24deg); }
+.mini-charger__led { position: absolute; bottom: 12px; left: 50%; transform: translateX(-50%); width: 26px; height: 5px; border-radius: 4px; background: linear-gradient(90deg, var(--green), #9fe8c8); box-shadow: 0 0 8px rgba(70,201,154,0.7); }
+
+/* ---------------- compare & specs ---------------- */
+.table-wrap { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.table-scroll { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 760px; }
+.data-table th { background: rgba(255,255,255,0.06); font-family: var(--font-mono); font-size: 10.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.2px; color: var(--text-dim); text-align: left; padding: 14px 16px; border-bottom: 2px solid var(--border-2); white-space: nowrap; }
+.data-table td { padding: 14px 16px; border-bottom: 1px solid var(--border); vertical-align: top; }
+.data-table tbody tr:nth-child(even) { background: rgba(255,255,255,0.025); }
+.data-table tbody tr:last-child td { border-bottom: none; }
+.rowhead { font-weight: 700; white-space: nowrap; }
+tr.our-row { background: var(--gold-dim) !important; }
+tr.our-row td:first-child { border-left: 3px solid var(--gold); }
+.pill { display: inline-block; font-family: var(--font-mono); font-size: 10px; font-weight: 500; padding: 3px 10px; border-radius: 6px; white-space: nowrap; }
+.pill--best { background: var(--green-dim); color: var(--green); }
+.pill--mid { background: var(--gold-dim); color: var(--gold-hi); }
+.pill--weak { background: rgba(224,101,79,0.12); color: var(--red); }
+.our-badge { font-family: var(--font-mono); font-size: 9px; background: var(--gold); color: #171400; padding: 2px 7px; border-radius: 4px; font-weight: 600; margin-right: 8px; letter-spacing: 0.5px; }
+
+/* specs accordion */
+.specs-acc { border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.specs-acc details { border-bottom: 1px solid var(--border); }
+.specs-acc details:last-child { border-bottom: none; }
+.specs-acc summary { cursor: pointer; list-style: none; display: flex; justify-content: space-between; align-items: center; gap: 14px; padding: 18px 22px; font-weight: 700; font-size: 15px; transition: background 0.15s ease; }
+.specs-acc summary::-webkit-details-marker { display: none; }
+.specs-acc summary:hover { background: rgba(255,255,255,0.035); }
+.specs-acc summary::after { content: '+'; font-family: var(--font-mono); color: var(--gold); font-size: 16px; }
+.specs-acc details[open] summary::after { content: '−'; }
+.specs-acc .acc-body { padding: 0 22px 20px; }
+.specs-acc .acc-body dl { display: grid; grid-template-columns: 150px 1fr; gap: 8px 18px; font-size: 13.5px; }
+.specs-acc dt { color: var(--text-dim); font-family: var(--font-mono); font-size: 11.5px; padding-top: 2px; }
+.specs-acc dd { color: var(--text); }
+
+/* ---------------- buy ---------------- */
+.buy { text-align: center; background:
+  radial-gradient(ellipse 60% 55% at 50% 0%, rgba(212,167,58,0.10) 0%, transparent 65%),
+  linear-gradient(180deg, var(--bg), #0a0c12); border-top: 1px solid var(--border); }
+.buy__price { font-size: clamp(38px, 7vw, 64px); font-weight: 800; letter-spacing: -2px; margin: 14px 0 4px; }
+.buy__strike { color: var(--text-dim); text-decoration: line-through; font-size: 0.45em; font-weight: 500; vertical-align: middle; margin-left: 10px; }
+.buy__note { color: var(--text-dim); font-size: 14px; }
+.buy__btns { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 28px; }
+.buy__market { font-family: var(--font-mono); font-size: 11px; color: var(--text-dim); margin-top: 18px; letter-spacing: 1px; }
+
+footer { border-top: 1px solid var(--border); padding: 34px 0 46px; color: var(--text-dim); font-size: 12.5px; }
+footer .wrap { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; align-items: center; }
+footer .f-links { display: flex; gap: 20px; flex-wrap: wrap; font-family: var(--font-mono); font-size: 11px; }
+footer .f-links a:hover { color: var(--text); }
+
+.callout { padding: 18px 22px; border-radius: 14px; border: 1px solid rgba(212,167,58,0.3); background: var(--gold-dim); margin-top: 26px; font-size: 14.5px; text-align: left; }
+.callout b { color: var(--gold-hi); }
+
+/* ============================================================
+   v2 — review-driven additions
+   ============================================================ */
+
+/* --- light theme (outdoor visibility) --- */
+[data-theme="light"] {
+  --bg: #f6f7f9; --bg-2: #edf0f5;
+  --surface: rgba(12,18,30,0.035); --surface-2: rgba(12,18,30,0.06);
+  --border: rgba(12,18,30,0.10); --border-2: rgba(12,18,30,0.20);
+  --text: #0d1522; --text-dim: #5b6675;
+  --gold: #a97f14; --gold-hi: #8a6608; --gold-dim: rgba(169,127,20,0.10);
+  --green: #12855f; --green-dim: rgba(18,133,95,0.10); --red: #c0442f;
+}
+[data-theme="light"] .nav { background: rgba(246,247,249,0.82); }
+[data-theme="light"] .chipnav { background: rgba(246,247,249,0.92); }
+[data-theme="light"] .sec--alt { background: linear-gradient(180deg,#f6f7f9,#e9edf3 50%,#f6f7f9); }
+[data-theme="light"] .stats { background: #edf0f5; }
+[data-theme="light"] .buy { background: radial-gradient(ellipse 60% 55% at 50% 0%, rgba(169,127,20,0.10) 0%, transparent 65%), linear-gradient(180deg,#f6f7f9,#e6eaf1); }
+[data-theme="light"] .phone3d,
+[data-theme="light"] .phoneback,
+[data-theme="light"] .mini-phone { box-shadow: 0 30px 60px rgba(20,30,50,0.25), 0 6px 18px rgba(20,30,50,0.18); }
+[data-theme="light"] .btn--gold { color: #fff; }
+[data-theme="light"] .hero::before { background: radial-gradient(ellipse 50% 45% at 50% 12%, rgba(74,144,217,0.14) 0%, transparent 65%); }
+
+.theme-toggle { background: transparent; border: 1px solid var(--border-2); color: var(--text); width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; cursor: pointer; flex-shrink: 0; transition: background 0.15s ease; }
+.theme-toggle:hover { background: var(--surface); }
+
+/* --- WCAG 44px touch targets --- */
+.swatch { width: 44px; height: 44px; }
+.swatch::after { content: ''; position: absolute; inset: -6px; border-radius: 50%; }
+.btn { min-height: 44px; }
+.chipnav a { min-height: 44px; display: inline-flex; align-items: center; }
+.specs-acc summary { min-height: 54px; }
+
+/* --- sticky mobile conversion bar --- */
+.stickybar { display: none; }
+@media (max-width: 980px) {
+  .stickybar {
+    position: fixed; left: 0; right: 0; bottom: 0; z-index: 120;
+    display: flex; align-items: center; gap: 12px;
+    padding: 10px 14px calc(10px + env(safe-area-inset-bottom));
+    background: rgba(9,11,16,0.94);
+    backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px);
+    border-top: 1px solid var(--border-2);
+  }
+  [data-theme="light"] .stickybar { background: rgba(255,255,255,0.95); }
+  .stickybar__info { min-width: 0; }
+  .stickybar__name { font-weight: 800; font-size: 13.5px; letter-spacing: -0.2px; }
+  .stickybar__price { font-family: var(--font-mono); font-size: 11px; color: var(--gold-hi); }
+  .stickybar__cta { display: flex; gap: 8px; margin-left: auto; flex-shrink: 0; }
+  .stickybar .btn { padding: 11px 15px; font-size: 12.5px; white-space: nowrap; }
+  body { padding-bottom: 86px; }
+}
+
+/* --- price breakdown --- */
+.price-trigger { background: none; border: none; cursor: pointer; color: var(--gold-hi); font: inherit; font-size: 13px; font-weight: 600; padding: 6px 0; min-height: 44px; text-decoration: underline dotted; text-underline-offset: 3px; }
+.modal { position: fixed; inset: 0; z-index: 200; display: none; place-items: center; padding: 20px; background: rgba(4,6,10,0.72); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
+.modal.is-open { display: grid; }
+.modal__card { background: var(--bg-2); border: 1px solid var(--border-2); border-radius: 20px; width: 100%; max-width: 430px; padding: 26px; box-shadow: 0 30px 80px rgba(0,0,0,0.6); animation: fadeScale 0.25s ease-out both; }
+.modal__card h3 { font-size: 20px; font-weight: 800; letter-spacing: -0.4px; }
+.modal__card > p { color: var(--text-dim); font-size: 13.5px; margin-top: 6px; }
+.bd-row { display: flex; justify-content: space-between; gap: 14px; padding: 12px 0; border-bottom: 1px dashed var(--border); font-size: 14px; }
+.bd-row span:last-child { font-variant-numeric: tabular-nums; font-weight: 600; white-space: nowrap; }
+.bd-row small { display: block; color: var(--text-dim); font-size: 11px; font-weight: 400; }
+.bd-row--total { border-bottom: none; padding-top: 16px; font-weight: 800; font-size: 18px; }
+.bd-row--total span:last-child { color: var(--gold-hi); }
+.modal__close { margin-top: 20px; width: 100%; }
+
+/* --- marketplace trust badges --- */
+.badges { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+.mkbadge { display: inline-flex; align-items: center; gap: 8px; font-family: var(--font-mono); font-size: 10.5px; letter-spacing: 0.4px; padding: 9px 14px; border-radius: 10px; border: 1px solid var(--border-2); background: var(--surface); }
+.mkbadge b { font-family: var(--font-body); font-size: 12px; }
+.mkbadge__dot { width: 8px; height: 8px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+/* --- camera sample gallery --- */
+.gal { margin-top: 44px; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; background: var(--surface); }
+.gal__scene { position: relative; aspect-ratio: 16/9; }
+.gal__img { position: absolute; inset: 0; opacity: 0; transition: opacity 0.45s ease; }
+.gal__img.is-on { opacity: 1; }
+.scene-night { background: radial-gradient(circle at 28% 24%, #5b83c4 0%, #1b2c48 32%, #070a12 74%); }
+.scene-night::after { content: ''; position: absolute; right: 18%; bottom: 16%; width: 34%; height: 40%; border-radius: 12px; background: linear-gradient(180deg, rgba(240,205,110,0.85), rgba(200,140,40,0.35)); filter: blur(10px); }
+.scene-day { background: linear-gradient(180deg,#8fc0ee 0%,#d8ecfb 42%,#e6d7ae 100%); }
+.scene-day::after { content: ''; position: absolute; left: 12%; bottom: 20%; width: 46%; height: 26%; border-radius: 50% 50% 8px 8px; background: linear-gradient(180deg, rgba(60,90,60,0.55), rgba(30,50,30,0.7)); filter: blur(4px); }
+.scene-uw { background: linear-gradient(120deg,#2f6b52 0%,#87b06a 42%,#c8d98f 100%); }
+.scene-uw::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 34%; background: linear-gradient(180deg, rgba(40,70,45,0.55), rgba(20,40,25,0.85)); }
+.scene-selfie { background: radial-gradient(circle at 50% 38%, #f4cfa6 0%, #b5805a 42%, #241812 78%); }
+.scene-selfie::after { content: ''; position: absolute; left: 50%; top: 30%; transform: translateX(-50%); width: 26%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle at 40% 35%, rgba(255,255,255,0.35), rgba(0,0,0,0.25)); filter: blur(2px); }
+.gal__tag { position: absolute; left: 12px; bottom: 12px; z-index: 2; font-family: var(--font-mono); font-size: 10px; letter-spacing: 1px; padding: 6px 11px; border-radius: 8px; background: rgba(6,8,12,0.62); color: #fff; }
+.gal__tabs { display: flex; gap: 8px; padding: 14px; flex-wrap: wrap; }
+.gal__tabs button { flex: 1 1 130px; min-height: 44px; border-radius: 10px; border: 1px solid var(--border); background: transparent; color: var(--text-dim); font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; }
+.gal__tabs button[aria-pressed="true"] { background: var(--gold-dim); color: var(--gold-hi); border-color: rgba(212,167,58,0.42); }
+.gal__note { font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); padding: 0 16px 16px; }
+
+/* --- review quotes --- */
+.quotes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.quote { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; animation: fadeUp 0.5s ease-out both; animation-delay: calc(var(--i) * 0.07s); }
+.quote__stars { color: var(--gold-hi); font-size: 13px; letter-spacing: 3px; }
+.quote p { font-size: 14.5px; font-style: italic; margin-top: 12px; }
+.quote__who { margin-top: 14px; font-family: var(--font-mono); font-size: 10.5px; color: var(--text-dim); letter-spacing: 0.4px; }
+
+/* --- dynamic compare toggle --- */
+.cmp-toggle { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 18px; }
+.cmp-toggle button { min-height: 44px; padding: 8px 16px; border-radius: 100px; border: 1px solid var(--border); background: transparent; color: var(--text-dim); font: inherit; font-size: 12.5px; font-weight: 600; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; }
+.cmp-toggle button[aria-pressed="true"] { background: var(--gold-dim); color: var(--gold-hi); border-color: rgba(212,167,58,0.42); }
+tr.is-hidden { display: none; }
+
+/* --- ecosystem bundle builder --- */
+.bundle { margin-top: 22px; border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface); padding: 24px; }
+.bundle__row { display: flex; align-items: center; gap: 14px; padding: 13px 0; border-bottom: 1px dashed var(--border); }
+.bundle__row:last-of-type { border-bottom: none; }
+.bundle__row input { width: 22px; height: 22px; accent-color: var(--gold); flex-shrink: 0; cursor: pointer; }
+.bundle__row label { display: flex; justify-content: space-between; align-items: center; gap: 14px; width: 100%; cursor: pointer; font-size: 14px; }
+.bundle__row small { display: block; color: var(--text-dim); font-family: var(--font-mono); font-size: 11px; font-weight: 400; margin-top: 2px; }
+.bundle__row b { white-space: nowrap; font-variant-numeric: tabular-nums; }
+.bundle__total { margin-top: 16px; display: flex; justify-content: space-between; align-items: baseline; font-weight: 800; font-size: 18px; padding-top: 16px; border-top: 1px solid var(--border-2); }
+.bundle__total span:last-child { color: var(--gold-hi); font-variant-numeric: tabular-nums; }
+
+/* --- drag-to-rotate --- */
+.phoneback { cursor: grab; touch-action: pan-y; transition: transform 0.35s ease; }
+.phoneback.is-drag { cursor: grabbing; transition: none; }
+
+
+/* ---- real render assets ---- */
+.hero-shot { width: min(760px, 86vw); height: auto; margin: 0 auto; display: block;
+  border-radius: 26px; box-shadow: 0 40px 90px rgba(0,0,0,.55); animation: fadeScale .6s ease-out both; }
+[data-theme="light"] .hero-shot { box-shadow: 0 34px 80px rgba(20,30,50,.22); }
+.shot { width: 100%; height: auto; border-radius: 22px; display: block;
+  box-shadow: 0 30px 70px rgba(0,0,0,.5); }
+[data-theme="light"] .shot { box-shadow: 0 26px 60px rgba(20,30,50,.2); }
+.cw { position: relative; display: grid; place-items: center; gap: 16px; }
+.cw__img { display: none; width: min(420px, 76vw); height: auto; border-radius: 24px;
+  box-shadow: 0 34px 80px rgba(0,0,0,.55); }
+.cw__img.is-on { display: block; animation: fadeScale .35s ease-out both; }
+[data-theme="light"] .cw__img { box-shadow: 0 28px 66px rgba(20,30,50,.22); }
+.fam-shot { width: min(230px, 62%); height: auto; }
+.gal__img { background-size: cover; background-position: center; }
+@media (max-width: 900px) { .quotes { grid-template-columns: 1fr; } }
+@media (max-width: 560px) {
+  .hero-shot { width: 92vw; border-radius: 18px; }
+  .shot { border-radius: 16px; }
+  .cw__img { width: 86vw; }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 980px) {
+  .nav__links { display: none; }
+  .chipnav { display: block; }
+  .stats__row { grid-template-columns: repeat(3, 1fr); }
+  .stat { border-left: none; border-top: 1px solid var(--border); }
+  .stat:nth-child(-n+3) { border-top: none; }
+  .duo { grid-template-columns: 1fr; }
+  .duo--flip .duo__media { order: 0; }
+  .duo__copy { text-align: left; }
+  .family { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 560px) {
+  .stats__row { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(3) { border-top: 1px solid var(--border); }
+  .stat:nth-child(-n+2) { border-top: none; }
+  .family { grid-template-columns: 1fr; }
+  .specs-acc .acc-body dl { grid-template-columns: 1fr; gap: 2px 0 10px; }
+  .specs-acc dt { margin-top: 10px; }
+  .phone3d { width: min(230px, 66vw); }
+  .hero__cta .btn { width: 100%; }
+}
+</style>
+</head>
+<body>
+
+<!-- ================= NAV ================= -->
+<nav class="nav">
+  <div class="nav__inner">
+    <a class="brandmark" href="#top"><span class="brandmark__dot"></span>VYOM</a>
+    <div class="nav__links">
+      <a href="#design">Design</a>
+      <a href="#display">Display</a>
+      <a href="#camera">Camera</a>
+      <a href="#battery">Battery</a>
+      <a href="#family">Ecosystem</a>
+      <a href="#compare">Compare</a>
+      <a href="#specs">Tech Specs</a>
+    </div>
+    <div style="display:flex;align-items:center;gap:10px;">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
+      </button>
+      <a href="#buy"><button class="btn btn--gold">Buy</button></a>
+    </div>
+  </div>
+</nav>
+<div class="chipnav">
+  <div class="chipnav__row">
+    <a href="#design">Design</a><a href="#display">Display</a><a href="#camera">Camera</a>
+    <a href="#samples">Samples</a><a href="#battery">Battery</a><a href="#family">Ecosystem</a><a href="#reviews">Reviews</a><a href="#compare">Compare</a><a href="#specs">Tech Specs</a>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="hero__badge">LAUNCHING THIS FESTIVE SEASON &middot; ₹17,499 EFFECTIVE*</div>
+    <h1>Vyom X1</h1>
+    <p class="hero__tag"><b>Flagship-grade everything. Budget-market price.</b> The first phone under ₹20K that refuses every compromise — FHD+ AMOLED, OIS camera, 7000mAh + 80W, IP68/69.</p>
+    <div class="hero__cta">
+      <a href="#buy"><button class="btn btn--gold">Buy now</button></a>
+      <a href="#design"><button class="btn btn--ghost">Take the tour</button></a>
+    </div>
+    <p class="hero__price">From <b>₹18,999</b> &middot; 8GB + 128GB &middot; *with card & exchange offers</p>
+    <div style="margin-top:4px;"><button class="price-trigger" data-modal="priceModal">How the ₹17,499 effective price works →</button></div>
+  </div>
+
+  <img class="hero-shot" src="ASSET_BLOB" alt="Vyom X1 5G front view" width="1200" height="1200">
+  </div>
+</header>
+
+<!-- ================= STATS ================= -->
+<div class="stats">
+  <div class="wrap">
+    <div class="stats__row">
+      <div class="stat"><div class="stat__v">7000mAh</div><div class="stat__l">Si-C battery</div></div>
+      <div class="stat"><div class="stat__v">80W</div><div class="stat__l">Fast charge</div></div>
+      <div class="stat"><div class="stat__v">FHD+</div><div class="stat__l">AMOLED 120Hz</div></div>
+      <div class="stat"><div class="stat__v">50MP</div><div class="stat__l">OIS camera</div></div>
+      <div class="stat"><div class="stat__v">IP68/69</div><div class="stat__l">+ MIL-STD-810H</div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= DESIGN ================= -->
+<section class="sec sec--alt" id="design">
+  <div class="wrap">
+    <div class="duo">
+      <div class="duo__media cw">
+        <img class="cw__img is-on" data-c="ocean" src="ASSET_BLOB" alt="Vyom X1 in Ocean Deep">
+        <img class="cw__img" data-c="copper" src="ASSET_BLOB" alt="Vyom X1 in Copper Dune">
+        <img class="cw__img" data-c="silver" src="ASSET_BLOB" alt="Vyom X1 in Glacial Silver">
+        <div class="swatches">
+          <button class="swatch" data-c="ocean" aria-pressed="true" title="Ocean Deep" style="background:linear-gradient(145deg,#2c4d7e,#101826)"></button>
+          <button class="swatch" data-c="copper" aria-pressed="false" title="Copper Dune" style="background:linear-gradient(145deg,#8a5a2e,#241609)"></button>
+          <button class="swatch" data-c="silver" aria-pressed="false" title="Glacial Silver" style="background:linear-gradient(145deg,#d7dde6,#5c6572)"></button>
+          <span class="swatches__label" id="colorName">Ocean Deep</span>
+        </div>
+      </div>
+      <div class="duo__copy">
+        <div class="kicker">Design</div>
+        <h2 class="h-lg">Slim where it counts.<br>Tough where it matters.</h2>
+        <p class="lead">A 7000mAh phone that's <b>8.1mm thin and ~205g light</b> — because silicon-carbon chemistry packs more power into less material. Flat aluminium frame, sculpted camera island, Gorilla Glass 5 on both sides.</p>
+        <ul>
+          <li><b>Three finishes:</b> Ocean Deep, Copper Dune, Glacial Silver</li>
+          <li><b>IP68 & IP69</b> — full dust seal and high-pressure water jets</li>
+          <li><b>MIL-STD-810H</b> tested — 1.5m drops, monsoon humidity, 45°C heat</li>
+          <li><b>Stereo speakers</b>, NFC, IR blaster, 3.5mm jack — nothing removed, nothing locked</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= DISPLAY ================= -->
+<section class="sec" id="display">
+  <div class="wrap">
+    <div class="duo duo--flip">
+      <div class="duo__copy">
+        <div class="kicker">Display</div>
+        <h2 class="h-lg">While the segment went 720p,<br>we went Full-HD+ AMOLED.</h2>
+        <p class="lead">The 2026 chip crisis pushed nearly every rival under ₹20K back to HD+ LCD panels. The Vyom X1 answers with the display this price deserves: <b>6.72&Prime; of 2400×1080 AMOLED at 120Hz</b>, 2200 nits of local peak brightness.</p>
+        <ul>
+          <li><b>FHD+ resolution</b> — 395 PPI, sharper than any HD+ rival at any price</li>
+          <li><b>120Hz LTPO-style adaptive</b> — drops to 30Hz while reading, full speed while scrolling</li>
+          <li><b>2200 nits local peak</b> — fully readable under direct Indian summer sun</li>
+          <li><b>HDR10+ & DCI-P3</b> — the OTT-watching phone of the segment</li>
+        </ul>
+      </div>
+      <div class="duo__media"><img class="shot" src="ASSET_BLOB" alt="Vyom X1 FHD+ AMOLED display"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAMERA ================= -->
+<section class="sec sec--alt" id="camera">
+  <div class="wrap">
+    <div class="duo">
+      <div class="duo__media"><img class="shot" src="ASSET_BLOB" alt="Vyom X1 50MP OIS camera module"></div>
+      </div>
+      <div class="duo__copy">
+        <div class="kicker">Camera</div>
+        <h2 class="h-lg">No 2MP fillers.<br>Real sensors. Real stabilisation.</h2>
+        <p class="lead">The segment ships "dual cameras" where the second is a 2MP decoy. The X1 ships a <b>50MP Sony LYT-600 with true OIS</b>, a genuine 8MP 119° ultrawide, and a 32MP front camera that shoots 4K.</p>
+        <ul>
+          <li><b>OIS at ₹18,999</b> — sharp night shots and stable video the segment can't match</li>
+          <li><b>8MP 119° ultrawide</b> — group photos and landscapes, actually usable</li>
+          <li><b>32MP selfie with 4K video</b> — the content-creator front camera of the price class</li>
+          <li><b>On-device AI suite</b> — night mode, magic eraser, live translation, all offline</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CAMERA SAMPLES ================= -->
+<section class="sec" id="samples">
+  <div class="wrap">
+    <div class="kicker">Camera samples</div>
+    <h2 class="h-lg">Shot on Vyom X1.</h2>
+    <p class="lead">Toggle the lighting and lens scenario — night-mode OIS, daylight, ultrawide, and the 32MP front camera.</p>
+    <div class="gal">
+      <div class="gal__scene">
+        <div class="gal__img" data-shot="night" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">OIS NIGHT MODE &middot; 50MP</span></div>
+        <div class="gal__img" data-shot="day" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">DAYLIGHT &middot; 50MP</span></div>
+        <div class="gal__img" data-shot="uw" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">119&deg; ULTRAWIDE &middot; 8MP</span></div>
+        <div class="gal__img" data-shot="selfie" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">32MP SELFIE &middot; 4K</span></div>
+      </div>
+      <div class="gal__tabs">
+        <button data-shot="night" aria-pressed="true">Night (OIS)</button>
+        <button data-shot="day" aria-pressed="false">Daylight</button>
+        <button data-shot="uw" aria-pressed="false">Ultrawide</button>
+        <button data-shot="selfie" aria-pressed="false">Selfie</button>
+      </div>
+      <p class="gal__note">ILLUSTRATIVE RENDERS &mdash; SWAP IN REAL CAMERA SAMPLES BEFORE LAUNCH</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PERFORMANCE + BATTERY ================= -->
+<section class="sec" id="battery">
+  <div class="wrap">
+    <div class="duo duo--flip">
+      <div class="duo__copy">
+        <div class="kicker">Performance & Battery</div>
+        <h2 class="h-lg">Two days of power.<br>Twenty minutes to half.</h2>
+        <p class="lead">Snapdragon 7s Gen 3 on 4nm with a 5160mm² vapor chamber keeps BGMI at 120fps without throttling — and the <b>7000mAh silicon-carbon cell with 80W charging</b> is a combo no rival under ₹20K offers.</p>
+        <ul>
+          <li><b>8GB LPDDR5X standard</b>, 12+256 top variant — rivals ship 4–6GB</li>
+          <li><b>Bypass charging</b> — power the SoC directly during long gaming sessions</li>
+          <li><b>4 OS updates + 5 years security</b>, near-stock VayuOS, zero ads, zero bloat</li>
+        </ul>
+      </div>
+      <div class="duo__media">
+        <div class="chip3d">
+          <div class="chip3d__die">
+            <span>7s GEN 3<small>SNAPDRAGON &middot; 4nm</small></span>
+          </div>
+        </div>
+        <div class="batt-card" style="margin-top:22px;">
+          <div style="font-family:var(--font-mono);font-size:10.5px;letter-spacing:1.5px;text-transform:uppercase;color:var(--text-dim);">0→50% charge time</div>
+          <div class="batt-chart">
+            <svg viewBox="0 0 320 150" role="img" aria-label="Charging speed comparison chart">
+              <line x1="34" y1="10" x2="34" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <line x1="34" y1="120" x2="310" y2="120" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+              <text x="10" y="18" fill="#9aa3b2" font-size="9" font-family="monospace">50%</text>
+              <text x="10" y="123" fill="#9aa3b2" font-size="9" font-family="monospace">0%</text>
+              <path d="M34,120 L34,26 L160,26" fill="none" stroke="#f0cd6e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M34,120 L34,48 L260,48" fill="none" stroke="#4a90d9" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+              <path d="M34,120 L34,74 L308,74" fill="none" stroke="#e0654f" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+              <text x="52" y="40" fill="#f0cd6e" font-size="10" font-family="monospace" font-weight="bold">X1 · 80W · 20 min</text>
+              <text x="150" y="62" fill="#4a90d9" font-size="10" font-family="monospace">45W rival · ~38 min</text>
+              <text x="196" y="88" fill="#e0654f" font-size="10" font-family="monospace">25W rival · ~65 min</text>
+              <text x="34" y="138" fill="#9aa3b2" font-size="9" font-family="monospace">0 min</text>
+              <text x="270" y="138" fill="#9aa3b2" font-size="9" font-family="monospace">70 min</text>
+            </svg>
+          </div>
+          <div class="batt-legend">
+            <span><i style="background:#f0cd6e"></i>Vyom X1 (80W)</span>
+            <span><i style="background:#4a90d9"></i>45W rivals</span>
+            <span><i style="background:#e0654f"></i>25W rivals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FAMILY / ECOSYSTEM ================= -->
+<section class="sec sec--alt" id="family">
+  <div class="wrap">
+    <div class="kicker">The Vyom family</div>
+    <h2 class="h-lg">A phone for every budget. Gear for every day.</h2>
+    <p class="lead" style="margin-bottom:30px;">Like the big brands' sub-categories — one design language, three price tiers, and a starter ecosystem that makes the whole basket cheaper than one flagship.</p>
+
+    <div class="family">
+      <div class="fam-card fam-card--hero" style="--i:0">
+        <div class="fam-card__vis"><div class="mini-phone"><div class="mini-phone__scr"></div></div></div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag">The flagship killer</div>
+          <h4>Vyom X1</h4>
+          <p>6.72&Prime; FHD+ AMOLED 120Hz &middot; 7s Gen 3 &middot; 50MP OIS &middot; 7000mAh + 80W &middot; IP68/69</p>
+          <div class="fam-card__price">₹18,999 <small>8/128</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:1">
+        <div class="fam-card__vis"><div class="mini-phone" style="scale:0.9;"><div class="mini-phone__scr" style="background:radial-gradient(ellipse 90% 60% at 30% 20%,rgba(70,201,154,0.6) 0%,transparent 55%),linear-gradient(165deg,#0d2018,#05070d);"></div></div></div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag" style="color:var(--green);">The essential</div>
+          <h4>Vyom X1e</h4>
+          <p>6.62&Prime; FHD+ AMOLED 90Hz &middot; Dimensity 6400 &middot; 50MP &middot; 6000mAh + 45W</p>
+          <div class="fam-card__price">₹14,999 <small>6/128</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:2">
+        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Buds A1"></div><div class="mini-buds__bud mini-buds__bud--r"><div class="mini-buds__head"></div><div class="mini-buds__stem"></div></div><div class="mini-buds__case"></div></div></div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag">Audio</div>
+          <h4>Vyom Buds A1</h4>
+          <p>Up to 42dB ANC &middot; 12.4mm drivers &middot; 45h total &middot; low-latency game mode</p>
+          <div class="fam-card__price">₹1,299 <small>launch offer ₹999</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:3">
+        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Band Pulse"></div></div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag">Wearable</div>
+          <h4>Vyom Band Pulse</h4>
+          <p>1.6&Prime; AMOLED &middot; SpO₂ + HR &middot; 14-day battery &middot; 100+ sport modes &middot; IP68</p>
+          <div class="fam-card__price">₹1,799 <small>launch offer ₹1,499</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:4">
+        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Charge 80"></div></div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag">Power</div>
+          <h4>Vyom Charge 80</h4>
+          <p>80W GaN charger &middot; dual Type-C + USB-A &middot; bundled free with the X1</p>
+          <div class="fam-card__price">₹899 <small>free in box</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:5">
+        <div class="fam-card__vis" style="display:grid;place-items:center;">
+          <div style="text-align:center;">
+            <div style="font-size:clamp(30px,4vw,40px);font-weight:800;letter-spacing:-1.5px;color:var(--gold-hi);">2 + 3</div>
+            <div style="font-family:var(--font-mono);font-size:10px;color:var(--text-dim);letter-spacing:1.5px;margin-top:6px;">YEARS OF PROMISE</div>
+          </div>
+        </div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag">Care</div>
+          <h4>Vyom Care+</h4>
+          <p>₹999 one-time screen replacement for 3 years &middot; doorstep pickup in 400+ cities</p>
+          <div class="fam-card__price">₹499 <small>1st year included</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:6">
+        <div class="fam-card__vis"><div class="mini-phone" style="scale:0.82;"><div class="mini-phone__scr" style="background:radial-gradient(ellipse 90% 60% at 30% 20%,rgba(224,101,79,0.55) 0%,transparent 55%),linear-gradient(165deg,#221210,#0d0505);"></div></div></div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag" style="color:var(--red);">Ultra-compact</div>
+          <h4>Vyom X1 mini</h4>
+          <p>5.9&Prime; compact FHD+ AMOLED &middot; same 7s Gen 3 &middot; 4800mAh + 80W &middot; one-hand design</p>
+          <div class="fam-card__price">₹17,499 <small>8/128</small></div>
+        </div>
+      </div>
+      <div class="fam-card" style="--i:7">
+        <div class="fam-card__vis" style="display:grid;place-items:center;">
+          <div style="font-family:var(--font-mono);font-size:11px;color:var(--text-dim);text-align:center;line-height:2;padding:0 18px;">FAMILY BUNDLE<br><span style="color:var(--gold-hi);font-size:15px;font-weight:600;">X1 + Buds + Band</span><br>save ₹1,300 together</div>
+        </div>
+        <div class="fam-card__body">
+          <div class="fam-card__tag">Coming soon</div>
+          <h4>Vyom Ecosystem pack</h4>
+          <p>One checkout, one app, zero pairing pain — the "it just works" bundle at festival price</p>
+          <div class="fam-card__price">₹21,298 <small>everything above</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUNDLE ================= -->
+<section class="sec" id="bundle" style="padding-top:0;">
+  <div class="wrap">
+    <div class="bundle">
+      <div class="kicker" style="margin-bottom:6px;">Build your bundle</div>
+      <p style="color:var(--text-dim);font-size:13.5px;">Add ecosystem gear in one checkout — the total updates as you tick.</p>
+      <div class="bundle__row">
+        <input type="checkbox" id="bx-phone" checked disabled>
+        <label for="bx-phone"><span>Vyom X1 <small>8GB + 128GB &middot; base</small></span><b>₹18,999</b></label>
+      </div>
+      <div class="bundle__row">
+        <input type="checkbox" id="bx-buds" data-price="1499" checked>
+        <label for="bx-buds"><span>Vyom Buds A1 <small>42dB ANC &middot; 45h total</small></span><b>+₹1,499</b></label>
+      </div>
+      <div class="bundle__row">
+        <input type="checkbox" id="bx-band" data-price="1499" checked>
+        <label for="bx-band"><span>Vyom Band Pulse <small>AMOLED &middot; 14-day battery</small></span><b>+₹1,499</b></label>
+      </div>
+      <div class="bundle__row">
+        <input type="checkbox" id="bx-care" data-price="499" checked>
+        <label for="bx-care"><span>Vyom Care+ <small>3-yr screen replacement at ₹999</small></span><b>+₹499</b></label>
+      </div>
+      <div class="bundle__row">
+        <input type="checkbox" id="bx-charge" data-price="0" checked>
+        <label for="bx-charge"><span>Vyom Charge 80 <small>80W GaN &middot; in box</small></span><b>Free</b></label>
+      </div>
+      <div class="bundle__total"><span>Bundle total</span><span id="bundleTotal">₹22,496</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= REVIEWS ================= -->
+<section class="sec" id="reviews">
+  <div class="wrap">
+    <div class="kicker">Social proof</div>
+    <h2 class="h-lg">The verdict the segment has been waiting for.</h2>
+    <p class="lead" style="margin-bottom:26px;">Placeholder cards — drop in real tech-influencer and verified-buyer quotes at launch to close the trust gap for a new brand.</p>
+    <div class="quotes">
+      <div class="quote" style="--i:0">
+        <div class="quote__stars">★★★★★</div>
+        <p>"Finally, an FHD+ AMOLED under ₹20K again. The 7000mAh plus 80W combo alone makes this the segment's default pick."</p>
+        <div class="quote__who">PLACEHOLDER &middot; TECH REVIEWER QUOTE</div>
+      </div>
+      <div class="quote" style="--i:1">
+        <div class="quote__stars">★★★★★</div>
+        <p>"Real OIS and a real ultrawide at this price. Night shots are sharper than phones costing ₹8,000 more."</p>
+        <div class="quote__who">PLACEHOLDER &middot; CAMERA REVIEWER QUOTE</div>
+      </div>
+      <div class="quote" style="--i:2">
+        <div class="quote__stars">★★★★☆</div>
+        <p>"Battery easily runs two days. Charged to half in about twenty minutes — verified on my own unit."</p>
+        <div class="quote__who">PLACEHOLDER &middot; VERIFIED BUYER QUOTE</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= COMPARE ================= -->
+<section class="sec" id="compare">
+  <div class="wrap">
+    <div class="kicker">Compare</div>
+    <h2 class="h-lg">X1 vs the sub-₹20K bestsellers.</h2>
+    <p class="lead" style="margin-bottom:20px;">Spec for spec against the phones topping today's under-₹20K lists — same or lower money. Pick a rival to filter.</p>
+    <div class="cmp-toggle" role="group" aria-label="Filter comparison by rival">
+      <button data-rival="all" aria-pressed="true">All rivals</button>
+      <button data-rival="realme" aria-pressed="false">vs Realme P4x</button>
+      <button data-rival="samsung" aria-pressed="false">vs Galaxy M17e</button>
+      <button data-rival="poco" aria-pressed="false">vs Poco X7</button>
+      <button data-rival="iqoo" aria-pressed="false">vs iQOO Z10x</button>
+      <button data-rival="redmi" aria-pressed="false">vs Redmi 15</button>
+    </div>
+    <div class="table-wrap"><div class="table-scroll">
+      <table class="data-table">
+        <thead>
+          <tr><th>Phone (price)</th><th>Display</th><th>RAM+Storage</th><th>Camera</th><th>Battery</th><th>Updates</th><th>IP</th></tr>
+        </thead>
+        <tbody>
+          <tr class="our-row">
+            <td class="rowhead"><span class="our-badge">OURS</span>Vyom X1 (₹18,999)</td>
+            <td><b>FHD+ AMOLED</b> 120Hz · 2200 nits</td>
+            <td><b>8/128 → 12/256</b></td>
+            <td><b>50MP OIS + 8MP UW</b> · 32MP front</td>
+            <td><b>7000mAh + 80W</b></td>
+            <td><b>4 OS + 5 yr</b></td>
+            <td><b>IP68/69</b></td>
+          </tr>
+          <tr>
+            <td class="rowhead">Realme P4x 5G (₹17,949)</td>
+            <td><span class="pill pill--mid">LCD 144Hz</span></td>
+            <td><span class="pill pill--weak">6/128</span></td>
+            <td><span class="pill pill--weak">50+2MP · 8MP front</span></td>
+            <td><span class="pill pill--mid">7000mAh + 45W</span></td>
+            <td><span class="pill pill--weak">2 OS</span></td>
+            <td><span class="pill pill--mid">IP64</span></td>
+          </tr>
+          <tr>
+            <td class="rowhead">Samsung Galaxy M17e (₹13,999)</td>
+            <td><span class="pill pill--weak">HD+ LCD 120Hz</span></td>
+            <td><span class="pill pill--weak">4–6/128</span></td>
+            <td><span class="pill pill--weak">50MP · 8MP front</span></td>
+            <td><span class="pill pill--weak">6000mAh + 25W</span></td>
+            <td><span class="pill pill--best">6 OS + 6 yr</span></td>
+            <td><span class="pill pill--weak">None</span></td>
+          </tr>
+          <tr>
+            <td class="rowhead">Poco X7 5G (₹17,999)</td>
+            <td><span class="pill pill--mid">FHD+ AMOLED 120Hz</span></td>
+            <td><span class="pill pill--weak">6–8/128</span></td>
+            <td><span class="pill pill--mid">50MP Sony · no OIS</span></td>
+            <td><span class="pill pill--mid">5110mAh + 45W</span></td>
+            <td><span class="pill pill--weak">2 OS</span></td>
+            <td><span class="pill pill--mid">IP54/64</span></td>
+          </tr>
+          <tr>
+            <td class="rowhead">iQOO Z10x (₹15,019)</td>
+            <td><span class="pill pill--weak">HD+ LCD 120Hz</span></td>
+            <td><span class="pill pill--weak">6/128</span></td>
+            <td><span class="pill pill--weak">50+2MP · 8MP front</span></td>
+            <td><span class="pill pill--mid">6500mAh + 44W</span></td>
+            <td><span class="pill pill--weak">2 OS</span></td>
+            <td><span class="pill pill--mid">IP64</span></td>
+          </tr>
+          <tr>
+            <td class="rowhead">Redmi 15 5G (₹15,140)</td>
+            <td><span class="pill pill--weak">HD+ 120Hz</span></td>
+            <td><span class="pill pill--weak">6/128</span></td>
+            <td><span class="pill pill--weak">50MP · 8MP front</span></td>
+            <td><span class="pill pill--mid">7000mAh + 33W</span></td>
+            <td><span class="pill pill--weak">2 OS</span></td>
+            <td><span class="pill pill--weak">IP54</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div></div>
+    <p style="font-family:var(--font-mono);font-size:11px;color:var(--text-dim);margin-top:14px;">Competitor specs & prices per Gadgets360 / Smartprix / 91mobiles under-₹20K trackers, Sept 2026. VYOM is a fictional concept study.</p>
+  </div>
+</section>
+
+<!-- ================= SPECS ================= -->
+<section class="sec sec--alt" id="specs">
+  <div class="wrap">
+    <div class="kicker">Tech specs</div>
+    <h2 class="h-lg">Every last number.</h2>
+    <div class="specs-acc" style="margin-top:26px;">
+      <details open>
+        <summary>Display & Design</summary>
+        <div class="acc-body"><dl>
+          <dt>Panel</dt><dd>6.72&Prime; FHD+ (2400×1080) AMOLED, 395 PPI, HDR10+, DCI-P3</dd>
+          <dt>Refresh</dt><dd>Adaptive 30–120Hz</dd>
+          <dt>Brightness</dt><dd>1000 nits HBM · 2200 nits local peak</dd>
+          <dt>Protection</dt><dd>Gorilla Glass 5, front and back</dd>
+          <dt>Build</dt><dd>Flat aluminium frame · 8.1mm · ~205g · IP68/IP69 · MIL-STD-810H</dd>
+          <dt>Colours</dt><dd>Ocean Deep · Copper Dune · Glacial Silver</dd>
+        </dl></div>
+      </details>
+      <details>
+        <summary>Performance</summary>
+        <div class="acc-body"><dl>
+          <dt>Chipset</dt><dd>Snapdragon 7s Gen 3 (4nm)</dd>
+          <dt>Cooling</dt><dd>5160mm² vapor chamber with bypass charging</dd>
+          <dt>Memory</dt><dd>8GB LPDDR5X / 12GB LPDDR5X · UFS 3.1 storage (128/256GB)</dd>
+          <dt>Software</dt><dd>Android 16, VayuOS (near-stock, zero ads) · 4 OS + 5 years security</dd>
+        </dl></div>
+      </details>
+      <details>
+        <summary>Cameras</summary>
+        <div class="acc-body"><dl>
+          <dt>Main</dt><dd>50MP Sony LYT-600, f/1.8, OIS + EIS</dd>
+          <dt>Ultrawide</dt><dd>8MP, 119° FOV</dd>
+          <dt>Front</dt><dd>32MP, 4K30 video</dd>
+          <dt>Video</dt><dd>4K30 rear · gyro-EIS · on-device AI night/erase/translate</dd>
+        </dl></div>
+      </details>
+      <details>
+        <summary>Battery & Charging</summary>
+        <div class="acc-body"><dl>
+          <dt>Cell</dt><dd>7000mAh silicon-carbon</dd>
+          <dt>Charging</dt><dd>80W wired (0→50% in 20 min) · 80W GaN charger in box</dd>
+          <dt>Extras</dt><dd>Bypass charging · reverse wired 5W</dd>
+        </dl></div>
+      </details>
+      <details>
+        <summary>Connectivity & Audio</summary>
+        <div class="acc-body"><dl>
+          <dt>Network</dt><dd>Dual-SIM 5G (12 bands) · Wi-Fi 6 · BT 5.4 · NFC · IR blaster</dd>
+          <dt>Audio</dt><dd>Stereo speakers · 3.5mm jack · Hi-Res certified</dd>
+          <dt>Sensors</dt><dd>Optical under-display fingerprint · gyro · compass · ambient</dd>
+        </dl></div>
+      </details>
+      <details>
+        <summary>In the Box</summary>
+        <div class="acc-body"><dl>
+          <dt>Contents</dt><dd>Vyom X1 · 80W GaN charger · USB-C cable · clear TPU case · pre-applied screen protector · SIM tool</dd>
+          <dt>Care</dt><dd>Vyom Care+ included year 1 — ₹999 screen replacement, 400+ city doorstep pickup</dd>
+        </dl></div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BUY ================= -->
+<section class="sec buy" id="buy">
+  <div class="wrap">
+    <div class="kicker" style="justify-content:center;display:flex;">Buy</div>
+    <h2 class="h-xl">Vyom X1<span class="buy__strike">₹24,999</span></h2>
+    <p class="buy__note">From ₹18,999 (8+128GB) · ₹19,999 (12+256GB) · <b style="color:var(--gold-hi)">₹17,499 effective</b> with card + exchange, festival week only</p>
+    <div><button class="price-trigger" data-modal="priceModal">See how ₹17,499 works →</button></div>
+    <div class="buy__btns">
+      <button class="btn btn--gold" style="padding:14px 34px;font-size:15px;">Buy on Amazon</button>
+      <button class="btn btn--ghost" style="padding:14px 34px;font-size:15px;">Buy on Flipkart</button>
+    </div>
+    <div class="badges">
+      <span class="mkbadge"><span class="mkbadge__dot"></span><b>Amazon</b> Prime eligible · 2-day delivery</span>
+      <span class="mkbadge"><span class="mkbadge__dot"></span><b>Flipkart</b> Assured · 7-day replacement</span>
+      <span class="mkbadge"><span class="mkbadge__dot"></span><b>₹0</b> cost EMI from ₹1,583/mo</span>
+    </div>
+    <p class="buy__market">EXTRA ₹3,000 EXCHANGE BONUS &middot; VYOM CARE+ FREE FOR YEAR 1 &middot; 3-YEAR SCREEN REPLACEMENT AT ₹999</p>
+    <div class="callout" style="max-width:640px;margin-left:auto;margin-right:auto;"><b>The one-line promise:</b> 2023's flagship experience at a 2026 festival price — with updates till 2030. No brand under ₹20K offers this combination today.</div>
+  </div>
+</section>
+
+<!-- sticky mobile conversion bar -->
+<div class="stickybar" role="region" aria-label="Buy Vyom X1">
+  <div class="stickybar__info">
+    <div class="stickybar__name">Vyom X1 5G</div>
+    <div class="stickybar__price">₹17,499 effective</div>
+  </div>
+  <div class="stickybar__cta">
+    <button class="btn btn--gold">Amazon</button>
+    <button class="btn btn--ghost">Flipkart</button>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div><span style="font-weight:800;letter-spacing:4px;">VYOM</span> &middot; Sky is the spec sheet.</div>
+    <div class="f-links">
+      <a href="#design">Design</a><a href="#camera">Camera</a><a href="#specs">Tech Specs</a><a href="#compare">Compare</a><a href="#buy">Buy</a>
+    </div>
+    <div style="font-family:var(--font-mono);font-size:10.5px;">Concept study · Not a real product · Prices & rivals per public trackers, Sept 2026</div>
+  </div>
+</footer>
+
+<script>
+// colorway switcher — updates every .phoneback and hero swatch states
+const NAMES = { ocean: 'Ocean Deep', copper: 'Copper Dune', silver: 'Glacial Silver' };
+document.querySelectorAll('.swatch').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const c = btn.dataset.c;
+    document.querySelectorAll('.cw__img').forEach(p => p.classList.toggle('is-on', p.dataset.c === c));
+    document.querySelectorAll('.swatch[data-c="' + c + '"]').forEach(b => b.setAttribute('aria-pressed', 'true'));
+    document.querySelectorAll('.swatch:not([data-c="' + c + '"])').forEach(b => b.setAttribute('aria-pressed', 'false'));
+    const label = document.getElementById('colorName');
+    if (label) label.textContent = NAMES[c];
+  });
+});
+</script>
+<!-- price breakdown modal -->
+<div class="modal" id="priceModal" role="dialog" aria-modal="true" aria-labelledby="priceModalTitle">
+  <div class="modal__card">
+    <h3 id="priceModalTitle">How ₹17,499 works</h3>
+    <p>Festival week only. Every rupee accounted for:</p>
+    <div class="bd-row"><span>Launch price <small>8GB + 128GB</small></span><span>₹18,999</span></div>
+    <div class="bd-row"><span>Instant bank discount <small>HDFC / ICICI / SBI cards</small></span><span>−₹1,500</span></div>
+    <div class="bd-row bd-row--total"><span>Effective price</span><span>₹17,499</span></div>
+    <div class="bd-row"><span>Plus exchange bonus <small>on any working smartphone, extra</small></span><span>up to −₹3,000</span></div>
+    <button class="btn btn--ghost modal__close" data-close>Close</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  /* --- theme toggle (outdoor visibility) --- */
+  var tBtn = document.getElementById('themeBtn');
+  if (Math.random() < 0.3) root.setAttribute('data-theme', 'light');
+  if (tBtn) tBtn.addEventListener('click', function () {
+    root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+
+  /* --- price breakdown modal --- */
+  var modal = document.getElementById('priceModal');
+  function closeModal() { if (modal) modal.classList.remove('is-open'); }
+  document.querySelectorAll('[data-modal]').forEach(function (t) {
+    t.addEventListener('click', function () { if (modal) modal.classList.add('is-open'); });
+  });
+  if (modal) modal.addEventListener('click', function (e) {
+    if (e.target === modal || (e.target.hasAttribute && e.target.hasAttribute('data-close'))) closeModal();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeModal(); });
+
+  /* --- camera sample gallery --- */
+  var gal = document.querySelector('.gal');
+  if (gal) {
+    var tabs = gal.querySelectorAll('.gal__tabs button');
+    var imgs = gal.querySelectorAll('.gal__img');
+    tabs.forEach(function (t) {
+      t.addEventListener('click', function () {
+        var s = t.dataset.shot;
+        tabs.forEach(function (x) { x.setAttribute('aria-pressed', x === t ? 'true' : 'false'); });
+        imgs.forEach(function (im) { im.classList.toggle('is-on', im.dataset.shot === s); });
+      });
+    });
+  }
+
+  /* --- dynamic competitor compare filter --- */
+  var rows = document.querySelectorAll('#compare .data-table tbody tr');
+  rows.forEach(function (r) {
+    var head = r.querySelector('.rowhead');
+    var t = head ? head.textContent : '';
+    var rival = 'ours';
+    if (/Realme/i.test(t)) rival = 'realme';
+    else if (/Samsung/i.test(t)) rival = 'samsung';
+    else if (/Poco/i.test(t)) rival = 'poco';
+    else if (/iQOO/i.test(t)) rival = 'iqoo';
+    else if (/Redmi/i.test(t)) rival = 'redmi';
+    r.dataset.rival = rival;
+  });
+  var cmpBtns = document.querySelectorAll('.cmp-toggle button');
+  cmpBtns.forEach(function (b) {
+    b.addEventListener('click', function () {
+      var want = b.dataset.rival;
+      cmpBtns.forEach(function (x) { x.setAttribute('aria-pressed', x === b ? 'true' : 'false'); });
+      rows.forEach(function (r) {
+        r.classList.toggle('is-hidden', !(want === 'all' || r.dataset.rival === 'ours' || r.dataset.rival === want));
+      });
+    });
+  });
+
+  /* --- ecosystem bundle builder --- */
+  var totalEl = document.getElementById('bundleTotal');
+  var BASE = 18999;
+  function recalc() {
+    var t = BASE;
+    document.querySelectorAll('.bundle input[data-price]').forEach(function (c) {
+      if (c.checked) t += parseInt(c.dataset.price, 10);
+    });
+    if (totalEl) totalEl.textContent = '₹' + t.toLocaleString('en-IN');
+  }
+  document.querySelectorAll('.bundle input[data-price]').forEach(function (c) { c.addEventListener('change', recalc); });
+  recalc();
+
+  /* --- drag to rotate (design render) --- */
+  var bp = document.getElementById('backPhone');
+  if (bp) {
+    var drag = null;
+    bp.addEventListener('pointerdown', function (e) {
+      drag = { x: e.clientX };
+      bp.classList.add('is-drag');
+      if (bp.setPointerCapture) { try { bp.setPointerCapture(e.pointerId); } catch (err) {} }
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!drag) return;
+      var d = Math.max(-30, Math.min(30, (e.clientX - drag.x) * 0.35));
+      bp.style.transform = 'perspective(900px) rotateY(' + d + 'deg)';
+    });
+    window.addEventListener('pointerup', function () {
+      if (!drag) return;
+      drag = null;
+      bp.classList.remove('is-drag');
+      bp.style.transform = 'perspective(900px) rotateY(0deg)';
+    });
+  }
+})();
+</script>
+</body>
+</html>
