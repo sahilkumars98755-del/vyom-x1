@@ -5,16 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#07080c">
 <title>Vyom X1 — Sky is the spec sheet. | VYOM</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
+<meta name="description" content="Vyom X1 5G — FHD+ AMOLED, 7000mAh, OIS camera and 80W charging in one sub-₹20,000 phone. A concept study.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Vyom X1 5G — Sky is the spec sheet.">
+<meta property="og:description" content="FHD+ AMOLED, 7000mAh, OIS camera and 80W charging in one sub-₹20,000 phone.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2307080c'/%3E%3Cpath d='M16 20l16 26 16-26' fill='none' stroke='%23e8c46a' stroke-width='7' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&family=Fragment+Mono:ital@0;1&display=swap" rel="stylesheet">
 <style>
 /* ============================================================
    VYOM X1 — product site concept
    Dark-first premium aesthetic · deep navy-black + copper gold
    ============================================================ */
 :root {
-  --font-body: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   --font-mono: 'Fragment Mono', 'SF Mono', Consolas, monospace;
 
   --bg: #07080c;
@@ -357,7 +361,7 @@ footer .f-links a:hover { color: var(--text); }
   --surface: rgba(12,18,30,0.035); --surface-2: rgba(12,18,30,0.06);
   --border: rgba(12,18,30,0.10); --border-2: rgba(12,18,30,0.20);
   --text: #0d1522; --text-dim: #5b6675;
-  --gold: #a97f14; --gold-hi: #8a6608; --gold-dim: rgba(169,127,20,0.10);
+  --gold: #7a5c06; --gold-hi: #8a6608; --gold-dim: rgba(169,127,20,0.10);
   --green: #12855f; --green-dim: rgba(18,133,95,0.10); --red: #c0442f;
 }
 [data-theme="light"] .nav { background: rgba(246,247,249,0.82); }
@@ -514,9 +518,19 @@ tr.is-hidden { display: none; }
   .phone3d { width: min(230px, 66vw); }
   .hero__cta .btn { width: 100%; }
 }
+
+.skiplink { position:absolute; left:-9999px; top:0; z-index:999; background:var(--gold-hi); color:#0b0f18;
+  padding:12px 18px; border-radius:0 0 12px 0; font-weight:700; }
+.skiplink:focus { left:0; }
+.gal__scene { background:#0b0f18; }
+.shot, .fam-shot, .cw__img { aspect-ratio: 1; }
+section[id], header[id], [id]{ scroll-margin-top: calc(var(--nav-h, 60px) + 76px); }
+:focus-visible { outline:2px solid var(--gold-hi); outline-offset:3px; border-radius:6px; }
+@media (prefers-reduced-motion: reduce) { .skiplink { transition:none; } }
 </style>
 </head>
 <body>
+<a class="skiplink" href="#main">Skip to content</a>
 
 <!-- ================= NAV ================= -->
 <nav class="nav">
@@ -535,7 +549,7 @@ tr.is-hidden { display: none; }
       <button class="theme-toggle" id="themeBtn" aria-label="Toggle light and dark theme" title="Toggle theme">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2.4M12 19.6V22M4.2 4.2l1.7 1.7M18.1 18.1l1.7 1.7M2 12h2.4M19.6 12H22M4.2 19.8l1.7-1.7M18.1 5.9l1.7-1.7"/></svg>
       </button>
-      <a href="#buy"><button class="btn btn--gold">Buy</button></a>
+      <a class="btn btn--gold" href="#buy">Buy</a>
     </div>
   </div>
 </nav>
@@ -551,17 +565,16 @@ tr.is-hidden { display: none; }
   <div class="wrap">
     <div class="hero__badge">LAUNCHING THIS FESTIVE SEASON &middot; ₹17,499 EFFECTIVE*</div>
     <h1>Vyom X1</h1>
-    <p class="hero__tag"><b>Flagship-grade everything. Budget-market price.</b> The first phone under ₹20K that refuses every compromise — FHD+ AMOLED, OIS camera, 7000mAh + 80W, IP68/69.</p>
+    <p class="hero__tag"><b>Everyday-flagship experience. Budget-market price.</b> FHD+ AMOLED <em>and</em> a 7000mAh battery <em>and</em> OIS <em>and</em> 80W — a combination no rival under ₹20K puts in one phone.</p>
     <div class="hero__cta">
-      <a href="#buy"><button class="btn btn--gold">Buy now</button></a>
-      <a href="#design"><button class="btn btn--ghost">Take the tour</button></a>
+      <a class="btn btn--gold" href="#buy">Buy now</a>
+      <a class="btn btn--ghost" href="#design">Take the tour</a>
     </div>
-    <p class="hero__price">From <b>₹18,999</b> &middot; 8GB + 128GB &middot; *with card & exchange offers</p>
+    <p class="hero__price">From <b>₹18,999</b> &middot; 8GB + 128GB &middot; *with a ₹1,500 bank offer — no exchange needed</p>
     <div style="margin-top:4px;"><button class="price-trigger" data-modal="priceModal">How the ₹17,499 effective price works →</button></div>
   </div>
 
-  <img class="hero-shot" src="ASSET_BLOB" alt="Vyom X1 5G front view" width="1200" height="1200">
-  </div>
+  <img id="heroShot" class="hero-shot" src="ASSET_BLOB" alt="Vyom X1 5G front view" width="1200" height="1200">
 </header>
 
 <!-- ================= STATS ================= -->
@@ -578,13 +591,14 @@ tr.is-hidden { display: none; }
 </div>
 
 <!-- ================= DESIGN ================= -->
+<main id="main">
 <section class="sec sec--alt" id="design">
   <div class="wrap">
     <div class="duo">
       <div class="duo__media cw">
-        <img class="cw__img is-on" data-c="ocean" src="ASSET_BLOB" alt="Vyom X1 in Ocean Deep">
-        <img class="cw__img" data-c="copper" src="ASSET_BLOB" alt="Vyom X1 in Copper Dune">
-        <img class="cw__img" data-c="silver" src="ASSET_BLOB" alt="Vyom X1 in Glacial Silver">
+        <img class="cw__img is-on" data-c="ocean" src="ASSET_BLOB" alt="Vyom X1 in Ocean Deep" decoding="async">
+        <img class="cw__img" data-c="copper" src="ASSET_BLOB" alt="Vyom X1 in Copper Dune" decoding="async">
+        <img class="cw__img" data-c="silver" src="ASSET_BLOB" alt="Vyom X1 in Glacial Silver" decoding="async">
         <div class="swatches">
           <button class="swatch" data-c="ocean" aria-pressed="true" title="Ocean Deep" style="background:linear-gradient(145deg,#2c4d7e,#101826)"></button>
           <button class="swatch" data-c="copper" aria-pressed="false" title="Copper Dune" style="background:linear-gradient(145deg,#8a5a2e,#241609)"></button>
@@ -613,16 +627,17 @@ tr.is-hidden { display: none; }
     <div class="duo duo--flip">
       <div class="duo__copy">
         <div class="kicker">Display</div>
-        <h2 class="h-lg">While the segment went 720p,<br>we went Full-HD+ AMOLED.</h2>
+        <h2 class="h-lg">Most of the segment dropped<br>to HD+ LCD this year.</h2>
+        <p class="lead" style="margin-top:14px;">Poco X7 kept Full-HD+ AMOLED too. What no one else pairs it with is 7000mAh and 80W charging in the same ₹20K phone.</p>
         <p class="lead">The 2026 chip crisis pushed nearly every rival under ₹20K back to HD+ LCD panels. The Vyom X1 answers with the display this price deserves: <b>6.72&Prime; of 2400×1080 AMOLED at 120Hz</b>, 2200 nits of local peak brightness.</p>
         <ul>
           <li><b>FHD+ resolution</b> — 395 PPI, sharper than any HD+ rival at any price</li>
-          <li><b>120Hz LTPO-style adaptive</b> — drops to 30Hz while reading, full speed while scrolling</li>
+          <li><b>Adaptive 30–120Hz refresh</b> — idles low while reading, full speed while scrolling</li>
           <li><b>2200 nits local peak</b> — fully readable under direct Indian summer sun</li>
           <li><b>HDR10+ & DCI-P3</b> — the OTT-watching phone of the segment</li>
         </ul>
       </div>
-      <div class="duo__media"><img class="shot" src="ASSET_BLOB" alt="Vyom X1 FHD+ AMOLED display"></div>
+      <div class="duo__media"><img class="shot" src="ASSET_BLOB" alt="Vyom X1 FHD+ AMOLED display" decoding="async"></div>
     </div>
   </div>
 </section>
@@ -631,8 +646,7 @@ tr.is-hidden { display: none; }
 <section class="sec sec--alt" id="camera">
   <div class="wrap">
     <div class="duo">
-      <div class="duo__media"><img class="shot" src="ASSET_BLOB" alt="Vyom X1 50MP OIS camera module"></div>
-      </div>
+      <div class="duo__media"><img class="shot" src="ASSET_BLOB" alt="Vyom X1 50MP OIS camera module" decoding="async"></div>
       <div class="duo__copy">
         <div class="kicker">Camera</div>
         <h2 class="h-lg">No 2MP fillers.<br>Real sensors. Real stabilisation.</h2>
@@ -652,11 +666,11 @@ tr.is-hidden { display: none; }
 <section class="sec" id="samples">
   <div class="wrap">
     <div class="kicker">Camera samples</div>
-    <h2 class="h-lg">Shot on Vyom X1.</h2>
+    <h2 class="h-lg">The camera we're promising to prove.</h2>
     <p class="lead">Toggle the lighting and lens scenario — night-mode OIS, daylight, ultrawide, and the 32MP front camera.</p>
     <div class="gal">
       <div class="gal__scene">
-        <div class="gal__img" data-shot="night" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">OIS NIGHT MODE &middot; 50MP</span></div>
+        <div class="gal__img is-on" data-shot="night" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">OIS NIGHT MODE &middot; 50MP</span></div>
         <div class="gal__img" data-shot="day" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">DAYLIGHT &middot; 50MP</span></div>
         <div class="gal__img" data-shot="uw" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">119&deg; ULTRAWIDE &middot; 8MP</span></div>
         <div class="gal__img" data-shot="selfie" style="background-image:url(ASSET_BLOB);background-size:cover;background-position:center"><span class="gal__tag">32MP SELFIE &middot; 4K</span></div>
@@ -667,7 +681,7 @@ tr.is-hidden { display: none; }
         <button data-shot="uw" aria-pressed="false">Ultrawide</button>
         <button data-shot="selfie" aria-pressed="false">Selfie</button>
       </div>
-      <p class="gal__note">ILLUSTRATIVE RENDERS &mdash; SWAP IN REAL CAMERA SAMPLES BEFORE LAUNCH</p>
+      <p class="gal__note">Illustrative renders, not actual camera samples — this is a concept study.</p>
     </div>
   </div>
 </section>
@@ -679,11 +693,11 @@ tr.is-hidden { display: none; }
       <div class="duo__copy">
         <div class="kicker">Performance & Battery</div>
         <h2 class="h-lg">Two days of power.<br>Twenty minutes to half.</h2>
-        <p class="lead">Snapdragon 7s Gen 3 on 4nm with a 5160mm² vapor chamber keeps BGMI at 120fps without throttling — and the <b>7000mAh silicon-carbon cell with 80W charging</b> is a combo no rival under ₹20K offers.</p>
+        <p class="lead">Snapdragon 7s Gen 3 on 4nm with a 5160mm² vapor chamber sustains peak performance through long gaming sessions — and the <b>7000mAh silicon-carbon cell with 80W charging</b> is a combo no rival under ₹20K offers.</p>
         <ul>
           <li><b>8GB LPDDR5X standard</b>, 12+256 top variant — rivals ship 4–6GB</li>
           <li><b>Bypass charging</b> — power the SoC directly during long gaming sessions</li>
-          <li><b>4 OS updates + 5 years security</b>, near-stock VayuOS, zero ads, zero bloat</li>
+          <li><b>4 OS updates + 5 years security</b>, near-stock VyomOS, zero ads, zero bloat</li>
         </ul>
       </div>
       <div class="duo__media">
@@ -748,7 +762,7 @@ tr.is-hidden { display: none; }
         </div>
       </div>
       <div class="fam-card" style="--i:2">
-        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Buds A1"></div><div class="mini-buds__bud mini-buds__bud--r"><div class="mini-buds__head"></div><div class="mini-buds__stem"></div></div><div class="mini-buds__case"></div></div></div>
+        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Buds A1" decoding="async"></div>
         <div class="fam-card__body">
           <div class="fam-card__tag">Audio</div>
           <h4>Vyom Buds A1</h4>
@@ -757,7 +771,7 @@ tr.is-hidden { display: none; }
         </div>
       </div>
       <div class="fam-card" style="--i:3">
-        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Band Pulse"></div></div>
+        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Band Pulse" decoding="async"></div>
         <div class="fam-card__body">
           <div class="fam-card__tag">Wearable</div>
           <h4>Vyom Band Pulse</h4>
@@ -766,7 +780,7 @@ tr.is-hidden { display: none; }
         </div>
       </div>
       <div class="fam-card" style="--i:4">
-        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Charge 80"></div></div>
+        <div class="fam-card__vis"><img class="fam-shot" src="ASSET_BLOB" alt="Vyom Charge 80" decoding="async"></div>
         <div class="fam-card__body">
           <div class="fam-card__tag">Power</div>
           <h4>Vyom Charge 80</h4>
@@ -805,7 +819,7 @@ tr.is-hidden { display: none; }
           <div class="fam-card__tag">Coming soon</div>
           <h4>Vyom Ecosystem pack</h4>
           <p>One checkout, one app, zero pairing pain — the "it just works" bundle at festival price</p>
-          <div class="fam-card__price">₹21,298 <small>everything above</small></div>
+          <div class="fam-card__price">₹21,196 <small>everything above</small></div>
         </div>
       </div>
     </div>
@@ -848,22 +862,22 @@ tr.is-hidden { display: none; }
   <div class="wrap">
     <div class="kicker">Social proof</div>
     <h2 class="h-lg">The verdict the segment has been waiting for.</h2>
-    <p class="lead" style="margin-bottom:26px;">Placeholder cards — drop in real tech-influencer and verified-buyer quotes at launch to close the trust gap for a new brand.</p>
+    <p class="lead" style="margin-bottom:26px;">No reviews yet — Vyom X1 hasn't launched. These are the four things we commit to proving on day one.</p>
     <div class="quotes">
       <div class="quote" style="--i:0">
-        <div class="quote__stars">★★★★★</div>
+        <div class="quote__stars">COMMITMENT</div>
         <p>"Finally, an FHD+ AMOLED under ₹20K again. The 7000mAh plus 80W combo alone makes this the segment's default pick."</p>
-        <div class="quote__who">PLACEHOLDER &middot; TECH REVIEWER QUOTE</div>
+        <div class="quote__who">Launch commitment — not a review</div>
       </div>
       <div class="quote" style="--i:1">
         <div class="quote__stars">★★★★★</div>
         <p>"Real OIS and a real ultrawide at this price. Night shots are sharper than phones costing ₹8,000 more."</p>
-        <div class="quote__who">PLACEHOLDER &middot; CAMERA REVIEWER QUOTE</div>
+        <div class="quote__who">Launch commitment — not a review</div>
       </div>
       <div class="quote" style="--i:2">
         <div class="quote__stars">★★★★☆</div>
         <p>"Battery easily runs two days. Charged to half in about twenty minutes — verified on my own unit."</p>
-        <div class="quote__who">PLACEHOLDER &middot; VERIFIED BUYER QUOTE</div>
+        <div class="quote__who">Launch commitment — not a review</div>
       </div>
     </div>
   </div>
@@ -920,7 +934,7 @@ tr.is-hidden { display: none; }
             <td class="rowhead">Poco X7 5G (₹17,999)</td>
             <td><span class="pill pill--mid">FHD+ AMOLED 120Hz</span></td>
             <td><span class="pill pill--weak">6–8/128</span></td>
-            <td><span class="pill pill--mid">50MP Sony · no OIS</span></td>
+            <td><span class="pill pill--mid">50MP Sony · OIS</span></td>
             <td><span class="pill pill--mid">5110mAh + 45W</span></td>
             <td><span class="pill pill--weak">2 OS</span></td>
             <td><span class="pill pill--mid">IP54/64</span></td>
@@ -973,7 +987,7 @@ tr.is-hidden { display: none; }
           <dt>Chipset</dt><dd>Snapdragon 7s Gen 3 (4nm)</dd>
           <dt>Cooling</dt><dd>5160mm² vapor chamber with bypass charging</dd>
           <dt>Memory</dt><dd>8GB LPDDR5X / 12GB LPDDR5X · UFS 3.1 storage (128/256GB)</dd>
-          <dt>Software</dt><dd>Android 16, VayuOS (near-stock, zero ads) · 4 OS + 5 years security</dd>
+          <dt>Software</dt><dd>Android 16, VyomOS (near-stock, zero ads) · 4 OS + 5 years security</dd>
         </dl></div>
       </details>
       <details>
@@ -1016,17 +1030,17 @@ tr.is-hidden { display: none; }
 <section class="sec buy" id="buy">
   <div class="wrap">
     <div class="kicker" style="justify-content:center;display:flex;">Buy</div>
-    <h2 class="h-xl">Vyom X1<span class="buy__strike">₹24,999</span></h2>
-    <p class="buy__note">From ₹18,999 (8+128GB) · ₹19,999 (12+256GB) · <b style="color:var(--gold-hi)">₹17,499 effective</b> with card + exchange, festival week only</p>
+    <h2 class="h-xl">Vyom X1</h2>
+    <p class="buy__note">From ₹18,999 (8+128GB) · ₹19,999 (12+256GB) · <b style="color:var(--gold-hi)">₹17,499 effective</b> with a ₹1,500 bank offer — no exchange needed</p>
     <div><button class="price-trigger" data-modal="priceModal">See how ₹17,499 works →</button></div>
     <div class="buy__btns">
-      <button class="btn btn--gold" style="padding:14px 34px;font-size:15px;">Buy on Amazon</button>
-      <button class="btn btn--ghost" style="padding:14px 34px;font-size:15px;">Buy on Flipkart</button>
+      <a class="btn btn--gold" style="padding:14px 34px;font-size:15px;" href="https://www.amazon.in/" rel="noopener">Buy on Amazon</a>
+      <a class="btn btn--ghost" style="padding:14px 34px;font-size:15px;" href="https://www.flipkart.com/" rel="noopener">Buy on Flipkart</a>
     </div>
     <div class="badges">
       <span class="mkbadge"><span class="mkbadge__dot"></span><b>Amazon</b> Prime eligible · 2-day delivery</span>
       <span class="mkbadge"><span class="mkbadge__dot"></span><b>Flipkart</b> Assured · 7-day replacement</span>
-      <span class="mkbadge"><span class="mkbadge__dot"></span><b>₹0</b> cost EMI from ₹1,583/mo</span>
+      <span class="mkbadge"><span class="mkbadge__dot"></span><b>₹0</b> -cost EMI from ₹1,458/mo (select cards)</span>
     </div>
     <p class="buy__market">EXTRA ₹3,000 EXCHANGE BONUS &middot; VYOM CARE+ FREE FOR YEAR 1 &middot; 3-YEAR SCREEN REPLACEMENT AT ₹999</p>
     <div class="callout" style="max-width:640px;margin-left:auto;margin-right:auto;"><b>The one-line promise:</b> 2023's flagship experience at a 2026 festival price — with updates till 2030. No brand under ₹20K offers this combination today.</div>
@@ -1045,7 +1059,7 @@ tr.is-hidden { display: none; }
   </div>
 </div>
 
-<footer>
+</main>
   <div class="wrap">
     <div><span style="font-weight:800;letter-spacing:4px;">VYOM</span> &middot; Sky is the spec sheet.</div>
     <div class="f-links">
@@ -1088,7 +1102,10 @@ document.querySelectorAll('.swatch').forEach(btn => {
 
   /* --- theme toggle (outdoor visibility) --- */
   var tBtn = document.getElementById('themeBtn');
-  if (Math.random() < 0.3) root.setAttribute('data-theme', 'light');
+  var savedTheme = null; try { savedTheme = localStorage.getItem('vyom-theme'); } catch (e) {}
+  var wantsLight = savedTheme ? savedTheme === 'light'
+    : (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches);
+  root.setAttribute('data-theme', wantsLight ? 'light' : 'dark');
   if (tBtn) tBtn.addEventListener('click', function () {
     root.setAttribute('data-theme', root.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
   });
@@ -1156,7 +1173,7 @@ document.querySelectorAll('.swatch').forEach(btn => {
   recalc();
 
   /* --- drag to rotate (design render) --- */
-  var bp = document.getElementById('backPhone');
+  var bp = document.getElementById('heroShot');
   if (bp) {
     var drag = null;
     bp.addEventListener('pointerdown', function (e) {
