@@ -1,3 +1,4 @@
+Skip to content
 VYOM
 Design
 Display
@@ -18,13 +19,19 @@ Compare
 Tech Specs
 LAUNCHING THIS FESTIVE SEASON &middot; ₹17,499 EFFECTIVE*
 Vyom X1
-Flagship-grade everything. Budget-market price.
-The first phone under ₹20K that refuses every compromise — FHD+ AMOLED, OIS camera, 7000mAh + 80W, IP68/69.
+Everyday-flagship experience. Budget-market price.
+FHD+ AMOLED
+and
+a 7000mAh battery
+and
+OIS
+and
+80W — a combination no rival under ₹20K puts in one phone.
 Buy now
 Take the tour
 From
 ₹18,999
-&middot; 8GB + 128GB &middot; *with card & exchange offers
+&middot; 8GB + 128GB &middot; *with a ₹1,500 bank offer — no exchange needed
 How the ₹17,499 effective price works →
 7000mAh
 Si-C battery
@@ -52,15 +59,16 @@ tested — 1.5m drops, monsoon humidity, 45°C heat
 Stereo speakers
 , NFC, IR blaster, 3.5mm jack — nothing removed, nothing locked
 Display
-While the segment went 720p,
-we went Full-HD+ AMOLED.
+Most of the segment dropped
+to HD+ LCD this year.
+Poco X7 kept Full-HD+ AMOLED too. What no one else pairs it with is 7000mAh and 80W charging in the same ₹20K phone.
 The 2026 chip crisis pushed nearly every rival under ₹20K back to HD+ LCD panels. The Vyom X1 answers with the display this price deserves:
 6.72&Prime; of 2400×1080 AMOLED at 120Hz
 , 2200 nits of local peak brightness.
 FHD+ resolution
 — 395 PPI, sharper than any HD+ rival at any price
-120Hz LTPO-style adaptive
-— drops to 30Hz while reading, full speed while scrolling
+Adaptive 30–120Hz refresh
+— idles low while reading, full speed while scrolling
 2200 nits local peak
 — fully readable under direct Indian summer sun
 HDR10+ & DCI-P3
@@ -80,7 +88,7 @@ OIS at ₹18,999
 On-device AI suite
 — night mode, magic eraser, live translation, all offline
 Camera samples
-Shot on Vyom X1.
+The camera we're promising to prove.
 Toggle the lighting and lens scenario — night-mode OIS, daylight, ultrawide, and the 32MP front camera.
 OIS NIGHT MODE &middot; 50MP
 DAYLIGHT &middot; 50MP
@@ -90,11 +98,11 @@ Night (OIS)
 Daylight
 Ultrawide
 Selfie
-ILLUSTRATIVE RENDERS &mdash; SWAP IN REAL CAMERA SAMPLES BEFORE LAUNCH
+Illustrative renders, not actual camera samples — this is a concept study.
 Performance & Battery
 Two days of power.
 Twenty minutes to half.
-Snapdragon 7s Gen 3 on 4nm with a 5160mm² vapor chamber keeps BGMI at 120fps without throttling — and the
+Snapdragon 7s Gen 3 on 4nm with a 5160mm² vapor chamber sustains peak performance through long gaming sessions — and the
 7000mAh silicon-carbon cell with 80W charging
 is a combo no rival under ₹20K offers.
 8GB LPDDR5X standard
@@ -102,7 +110,7 @@ is a combo no rival under ₹20K offers.
 Bypass charging
 — power the SoC directly during long gaming sessions
 4 OS updates + 5 years security
-, near-stock VayuOS, zero ads, zero bloat
+, near-stock VyomOS, zero ads, zero bloat
 7s GEN 3
 SNAPDRAGON &middot; 4nm
 0→50% charge time
@@ -162,7 +170,7 @@ save ₹1,300 together
 Coming soon
 Vyom Ecosystem pack
 One checkout, one app, zero pairing pain — the "it just works" bundle at festival price
-₹21,298
+₹21,196
 everything above
 Build your bundle
 Add ecosystem gear in one checkout — the total updates as you tick.
@@ -185,16 +193,16 @@ Bundle total
 ₹22,496
 Social proof
 The verdict the segment has been waiting for.
-Placeholder cards — drop in real tech-influencer and verified-buyer quotes at launch to close the trust gap for a new brand.
-★★★★★
+No reviews yet — Vyom X1 hasn't launched. These are the four things we commit to proving on day one.
+COMMITMENT
 "Finally, an FHD+ AMOLED under ₹20K again. The 7000mAh plus 80W combo alone makes this the segment's default pick."
-PLACEHOLDER &middot; TECH REVIEWER QUOTE
+Launch commitment — not a review
 ★★★★★
 "Real OIS and a real ultrawide at this price. Night shots are sharper than phones costing ₹8,000 more."
-PLACEHOLDER &middot; CAMERA REVIEWER QUOTE
+Launch commitment — not a review
 ★★★★☆
 "Battery easily runs two days. Charged to half in about twenty minutes — verified on my own unit."
-PLACEHOLDER &middot; VERIFIED BUYER QUOTE
+Launch commitment — not a review
 Compare
 X1 vs the sub-₹20K bestsellers.
 Spec for spec against the phones topping today's under-₹20K lists — same or lower money. Pick a rival to filter.
@@ -238,7 +246,7 @@ None
 Poco X7 5G (₹17,999)
 FHD+ AMOLED 120Hz
 6–8/128
-50MP Sony · no OIS
+50MP Sony · OIS
 5110mAh + 45W
 2 OS
 IP54/64
@@ -280,7 +288,7 @@ Cooling
 Memory
 8GB LPDDR5X / 12GB LPDDR5X · UFS 3.1 storage (128/256GB)
 Software
-Android 16, VayuOS (near-stock, zero ads) · 4 OS + 5 years security
+Android 16, VyomOS (near-stock, zero ads) · 4 OS + 5 years security
 Cameras
 Main
 50MP Sony LYT-600, f/1.8, OIS + EIS
@@ -311,10 +319,9 @@ Care
 Vyom Care+ included year 1 — ₹999 screen replacement, 400+ city doorstep pickup
 Buy
 Vyom X1
-₹24,999
 From ₹18,999 (8+128GB) · ₹19,999 (12+256GB) ·
 ₹17,499 effective
-with card + exchange, festival week only
+with a ₹1,500 bank offer — no exchange needed
 See how ₹17,499 works →
 Buy on Amazon
 Buy on Flipkart
@@ -323,7 +330,7 @@ Prime eligible · 2-day delivery
 Flipkart
 Assured · 7-day replacement
 ₹0
-cost EMI from ₹1,583/mo
+-cost EMI from ₹1,458/mo (select cards)
 EXTRA ₹3,000 EXCHANGE BONUS &middot; VYOM CARE+ FREE FOR YEAR 1 &middot; 3-YEAR SCREEN REPLACEMENT AT ₹999
 The one-line promise:
 2023's flagship experience at a 2026 festival price — with updates till 2030. No brand under ₹20K offers this combination today.
@@ -331,6 +338,7 @@ Vyom X1 5G
 ₹17,499 effective
 Amazon
 Flipkart
+
 VYOM
 &middot; Sky is the spec sheet.
 Design
